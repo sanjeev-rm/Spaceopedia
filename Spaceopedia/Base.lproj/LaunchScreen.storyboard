@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WaZ-An-F8Y">
+                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="SPACEOPEDIA" id="rFz-6A-mVF"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="pq7-vb-7ZV">
+                                <rect key="frame" x="16" y="122" width="358" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZx-r0-DAn">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="95"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaP-Yk-cGO">
+                                        <rect key="frame" x="0.0" y="125" width="358" height="95"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTw-Uk-qA2">
+                                        <rect key="frame" x="0.0" y="250" width="358" height="95"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTH-NN-1l7">
+                                        <rect key="frame" x="0.0" y="375" width="358" height="95"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-6F-eBs">
+                                        <rect key="frame" x="0.0" y="500" width="358" height="100"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XaP-Yk-cGO" firstAttribute="top" secondItem="pq7-vb-7ZV" secondAttribute="top" constant="125" id="8xY-0z-Vrk"/>
+                                    <constraint firstItem="LTw-Uk-qA2" firstAttribute="top" secondItem="pq7-vb-7ZV" secondAttribute="top" constant="250" id="LaS-F8-BUG"/>
+                                    <constraint firstItem="WVJ-6F-eBs" firstAttribute="top" secondItem="pq7-vb-7ZV" secondAttribute="top" constant="500" id="fjn-g0-eV8"/>
+                                    <constraint firstItem="dTH-NN-1l7" firstAttribute="top" secondItem="pq7-vb-7ZV" secondAttribute="top" constant="375" id="nah-nt-hwm"/>
+                                </constraints>
+                            </stackView>
+                            <tabBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oal-gU-o0L">
+                                <rect key="frame" x="0.0" y="761" width="390" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Modules" id="wE2-Va-rLE">
+                                        <imageReference key="image" image="list.bullet" catalog="system" symbolScale="large" renderingMode="template"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Settings" id="Opw-Ya-DZ5">
+                                        <imageReference key="image" image="gear" catalog="system" symbolScale="large" renderingMode="template"/>
+                                        <imageReference key="selectedImage" image="gear.circle" catalog="system" symbolScale="medium" renderingMode="template" variableValue="0.0"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.97254908080000002" blue="0.97254908080000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pq7-vb-7ZV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="122" id="3B9-UZ-Q9U"/>
+                            <constraint firstItem="pq7-vb-7ZV" firstAttribute="centerX" secondItem="oal-gU-o0L" secondAttribute="centerX" id="EVa-nj-Ol9"/>
+                            <constraint firstItem="pq7-vb-7ZV" firstAttribute="centerX" secondItem="WaZ-An-F8Y" secondAttribute="centerX" id="Ip9-Qg-sVc"/>
+                            <constraint firstItem="pq7-vb-7ZV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RMN-KH-CTU"/>
+                            <constraint firstItem="pq7-vb-7ZV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="RuW-1G-zyu"/>
+                            <constraint firstItem="pq7-vb-7ZV" firstAttribute="top" secondItem="WaZ-An-F8Y" secondAttribute="bottom" constant="31" id="e4S-ze-tMF"/>
+                            <constraint firstItem="oal-gU-o0L" firstAttribute="top" secondItem="pq7-vb-7ZV" secondAttribute="bottom" constant="44" id="tRJ-iK-iAp"/>
+                            <constraint firstItem="pq7-vb-7ZV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="uZM-Gy-WSR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.307692307692307" y="374.64454976303318"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="gear.circle" catalog="system" width="128" height="123"/>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
