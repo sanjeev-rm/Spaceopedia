@@ -10,6 +10,9 @@ import UIKit
 
 class ApodController
 {
+    /// All the liked APODS.
+    var likedApods: [Apod]?
+    
     /// Error for the APOD retreiving process.
     enum ApodError: Error, LocalizedError {
         case itemNotFound

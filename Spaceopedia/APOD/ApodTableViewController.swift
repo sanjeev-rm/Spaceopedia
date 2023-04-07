@@ -72,8 +72,9 @@ class ApodTableViewController: UITableViewController {
         Task {
             do {
                 imageView.image = try await apodController.fetchApodImage(imageUrl: apod.url)
+                imageView.isHidden = false
                 titleLabel.text = apod.title
-                descriptionTextView.text = description
+                descriptionTextView.text = apod.description
                 likeButton.isEnabled = true
                 likeButton.isHidden = false
                 if let copyright = apod.copyright {
@@ -82,6 +83,7 @@ class ApodTableViewController: UITableViewController {
                 shareButton.isEnabled = true
                 shareButton.isHidden = false
             }catch {
+                updateUI(error: error)
             }
         }
     }
