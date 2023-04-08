@@ -15,7 +15,7 @@ class ApodTableViewController: UITableViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var likeButton: LikeButton!
     
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -49,7 +49,7 @@ class ApodTableViewController: UITableViewController {
     
     //MARK: - Functions
     
-    /// Initial updates to the UI.
+    /// Initial updates to the UI for when the app is fetching APOD from the NASA API.
     func fetchingApodViewUpdate()
     {
         imageView.isHidden = true
@@ -114,17 +114,12 @@ class ApodTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func likeButtonTapped(_ sender: UIButton)
+    @IBAction func likeButtonTapped(_ sender: LikeButton)
     {
-        let alertVC = UIAlertController(title: "Liked!", message: "Apod saved in the liked tabs.", preferredStyle: .actionSheet)
-        let okayAction = UIAlertAction(title: "Okay", style:
-                .default)
-        alertVC.addAction(okayAction)
-        present(alertVC, animated: true)
-        
-        if likeButton.image(for: .normal) == UIImage(systemName: "suit.heart") {
+        if sender.isLiked {
+            print("Removed from the list.")
         } else {
-            likeButton.imageView?.image = UIImage(systemName: "suit.heart")
+            print("Added to the list.")
         }
     }
 }

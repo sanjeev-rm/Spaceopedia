@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -143,30 +142,19 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-fm-ZEF">
-                                                            <rect key="frame" x="0.0" y="366" width="374" height="47.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-fm-ZEF">
+                                                            <rect key="frame" x="0.0" y="366" width="374" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stars over the rome" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9v1-rw-dfv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="47.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="21"/>
                                                                     <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-cV-V21">
-                                                                    <rect key="frame" x="337" y="0.0" width="37" height="47.5"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-cV-V21" customClass="LikeButton" customModule="Spaceopedia" customModuleProvider="target">
+                                                                    <rect key="frame" x="323.5" y="0.0" width="50.5" height="21"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain">
-                                                                        <imageReference key="image" image="suit.heart" catalog="system" symbolScale="small" renderingMode="hierarchical">
-                                                                            <hierarchicalColors>
-                                                                                <color systemColor="labelColor"/>
-                                                                                <color systemColor="secondaryLabelColor"/>
-                                                                                <color systemColor="tertiaryLabelColor"/>
-                                                                            </hierarchicalColors>
-                                                                        </imageReference>
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="font">
-                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                                        </preferredSymbolConfiguration>
-                                                                    </buttonConfiguration>
+                                                                    <buttonConfiguration key="configuration" style="plain" image="suit.heart" catalog="system"/>
                                                                     <connections>
                                                                         <action selector="likeButtonTapped:" destination="Ubl-Yw-Mrj" eventType="touchUpInside" id="Pyo-bl-nIP"/>
                                                                     </connections>
@@ -174,7 +162,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6H-hl-WpO">
-                                                            <rect key="frame" x="0.0" y="429.5" width="374" height="187.5"/>
+                                                            <rect key="frame" x="0.0" y="403" width="374" height="214"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec tellus tincidunt est mollis accumsan sit amet at massa. Nunc posuere tellus sed cursus varius. Donec mattis nulla vitae dolor luctus, at porttitor libero laoreet. Cras fringilla, dui quis blandit consequat, nisi orci sagittis augue, vel accumsan ipsum magna sit amet dolor. Vivamus at viverra neque, a sodales est. Praesent non elementum sapien. Nunc id ex at justo ullamcorper molestie.</string>
                                                             <color key="textColor" systemColor="labelColor"/>
@@ -363,14 +351,8 @@
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
