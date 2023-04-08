@@ -11,7 +11,7 @@ class LikedTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,20 +35,15 @@ class LikedTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let likedTitleCell = tableView.dequeueReusableCell(withIdentifier: "LikedTitleCell", for: indexPath)
         let likedCell = tableView.dequeueReusableCell(withIdentifier: "LikedCell", for: indexPath) as! LikedTableViewCell
-        
-//        if indexPath == IndexPath(row: 0, section: 0) {
-//            return likedCell
-//        } else {
-//            return likedCell
-//        }
         
         Task {
             do {
                 let date = Array(ApodController.likedApods!.keys)[indexPath.section]
                 let apod = Array(ApodController.likedApods!.values)[indexPath.section]
+                likedCell.activityIndicator.startAnimating()
                 let image = try await ApodController.fetchApodImage(imageUrl: apod.url)
+                likedCell.activityIndicator.stopAnimating()
                 likedCell.update(image: image, title: apod.title, date: date)
             } catch {
                 print("Liked Apod cell image couldn't be fetched.")

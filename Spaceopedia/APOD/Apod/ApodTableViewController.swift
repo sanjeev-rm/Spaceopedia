@@ -11,6 +11,7 @@ class ApodTableViewController: UITableViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -39,9 +40,8 @@ class ApodTableViewController: UITableViewController {
                 let date = datePicker.date.description.prefix(10)
                 let query = ["api_key":"DEMO_KEY", "date":"\(date)"]
                 apod = try await ApodController.fetchApodInfo(query: query)
-                
                 updateUI(apod: apod!)
-            }catch {
+            } catch {
                 updateUI(error: error)
             }
         }

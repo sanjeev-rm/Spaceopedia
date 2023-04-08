@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -120,15 +121,15 @@
                             </tableViewSection>
                             <tableViewSection id="pwD-pa-vpj">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="667" id="Bx7-uB-mwB">
-                                        <rect key="frame" x="20" y="104" width="374" height="667"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="723" id="Bx7-uB-mwB">
+                                        <rect key="frame" x="20" y="104" width="374" height="723"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bx7-uB-mwB" id="ECH-es-kRj">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="723"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-On-OBc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="723"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleImage1" translatesAutoresizingMaskIntoConstraints="NO" id="mX7-T8-rGf">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="350"/>
@@ -154,7 +155,15 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-cV-V21" customClass="LikeButton" customModule="Spaceopedia" customModuleProvider="target">
                                                                     <rect key="frame" x="337.5" y="0.0" width="36.5" height="34"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" image="suit.heart" catalog="system"/>
+                                                                    <buttonConfiguration key="configuration" style="plain">
+                                                                        <imageReference key="image" image="suit.heart" catalog="system" renderingMode="hierarchical-single">
+                                                                            <hierarchicalColors>
+                                                                                <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color systemColor="secondaryLabelColor"/>
+                                                                                <color systemColor="tertiaryLabelColor"/>
+                                                                            </hierarchicalColors>
+                                                                        </imageReference>
+                                                                    </buttonConfiguration>
                                                                     <connections>
                                                                         <action selector="likeButtonTapped:" destination="Ubl-Yw-Mrj" eventType="touchUpInside" id="Pyo-bl-nIP"/>
                                                                     </connections>
@@ -162,7 +171,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6H-hl-WpO">
-                                                            <rect key="frame" x="0.0" y="416" width="374" height="214"/>
+                                                            <rect key="frame" x="0.0" y="416" width="374" height="257"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec tellus tincidunt est mollis accumsan sit amet at massa. Nunc posuere tellus sed cursus varius. Donec mattis nulla vitae dolor luctus, at porttitor libero laoreet. Cras fringilla, dui quis blandit consequat, nisi orci sagittis augue, vel accumsan ipsum magna sit amet dolor. Vivamus at viverra neque, a sodales est. Praesent non elementum sapien. Nunc id ex at justo ullamcorper molestie.</string>
                                                             <color key="textColor" systemColor="labelColor"/>
@@ -170,16 +179,16 @@
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="K9Q-2c-gJL">
-                                                            <rect key="frame" x="0.0" y="646" width="374" height="21"/>
+                                                            <rect key="frame" x="0.0" y="689" width="374" height="34"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrD-gN-Psu">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="34"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQb-GV-b5H">
-                                                                    <rect key="frame" x="326" y="0.0" width="48" height="21"/>
+                                                                    <rect key="frame" x="326" y="0.0" width="48" height="34"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
                                                                 </button>
@@ -221,7 +230,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yu-3b-4TQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4900" y="-1863"/>
+            <point key="canvasLocation" x="4898.5507246376819" y="-1863.6160714285713"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Odw-c8-URG">
@@ -235,14 +244,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ubl-Yw-Mrj" kind="relationship" relationship="viewControllers" id="Mc1-24-Kdu"/>
-                        <segue destination="ywF-rN-Czc" kind="relationship" relationship="viewControllers" id="l68-rH-rwx"/>
+                        <segue destination="ywF-rN-Czc" kind="relationship" relationship="viewControllers" id="9qc-iS-4LU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fk-fv-Cup" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3663" y="-1562"/>
         </scene>
-        <!--Liked-->
+        <!--Item-->
         <scene sceneID="iUs-fu-I0M">
             <objects>
                 <tableViewController id="ywF-rN-Czc" customClass="LikedTableViewController" customModule="Spaceopedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -251,32 +260,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LikedTitleCell" rowHeight="50" id="ahc-Fs-4sh">
-                                <rect key="frame" x="20" y="38" width="374" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ahc-Fs-4sh" id="csL-Vs-fYy">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIKED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYG-dH-6WC">
-                                            <rect key="frame" x="0.0" y="0.0" width="95" height="50"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="jlQ-X7-I3N"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="RYG-dH-6WC" firstAttribute="leading" secondItem="csL-Vs-fYy" secondAttribute="leading" id="dNx-bL-pFE"/>
-                                        <constraint firstAttribute="bottom" secondItem="RYG-dH-6WC" secondAttribute="bottom" id="eXo-c5-QDX"/>
-                                        <constraint firstItem="RYG-dH-6WC" firstAttribute="top" secondItem="csL-Vs-fYy" secondAttribute="top" id="uFE-X8-Xcc"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LikedCell" rowHeight="144" id="lVX-1N-wiv" customClass="LikedTableViewCell" customModule="Spaceopedia" customModuleProvider="target">
-                                <rect key="frame" x="20" y="88" width="374" height="144"/>
+                                <rect key="frame" x="20" y="38" width="374" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lVX-1N-wiv" id="91d-gi-KKh">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="144"/>
@@ -301,12 +286,17 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="23q-gR-IIY">
+                                            <rect key="frame" x="168.5" y="53.5" width="37" height="37"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="U7x-RV-tZy" secondAttribute="trailing" id="0C8-cO-eOe"/>
+                                        <constraint firstItem="23q-gR-IIY" firstAttribute="centerY" secondItem="91d-gi-KKh" secondAttribute="centerY" id="6aQ-XD-10L"/>
                                         <constraint firstItem="C8D-ux-Ff0" firstAttribute="leading" secondItem="91d-gi-KKh" secondAttribute="leadingMargin" id="8pX-Hq-w1z"/>
                                         <constraint firstAttribute="bottom" secondItem="U7x-RV-tZy" secondAttribute="bottom" id="FbC-VB-XDy"/>
                                         <constraint firstItem="pgL-G2-jBd" firstAttribute="top" secondItem="C8D-ux-Ff0" secondAttribute="bottom" constant="8" symbolic="YES" id="Gpp-Su-iAe"/>
+                                        <constraint firstItem="23q-gR-IIY" firstAttribute="centerX" secondItem="91d-gi-KKh" secondAttribute="centerX" id="MUS-9j-9Ae"/>
                                         <constraint firstItem="pgL-G2-jBd" firstAttribute="leading" secondItem="91d-gi-KKh" secondAttribute="leadingMargin" id="Rui-7g-ETd"/>
                                         <constraint firstItem="U7x-RV-tZy" firstAttribute="top" secondItem="91d-gi-KKh" secondAttribute="top" id="Vda-Ge-xiZ"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="pgL-G2-jBd" secondAttribute="bottom" constant="0.5" id="XoA-jL-Rbr"/>
@@ -314,6 +304,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="23q-gR-IIY" id="SeJ-79-dXO"/>
                                     <outlet property="apodDateLabel" destination="pgL-G2-jBd" id="PEe-Op-lov"/>
                                     <outlet property="apodImageView" destination="U7x-RV-tZy" id="5bL-b8-TDS"/>
                                     <outlet property="apodTitleLabel" destination="C8D-ux-Ff0" id="gHE-rF-9ek"/>
@@ -326,11 +317,12 @@
                             <outlet property="delegate" destination="ywF-rN-Czc" id="dXu-c6-Xd2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Liked" image="heart.fill" catalog="system" id="xCB-qQ-oaK"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="heart.fill" catalog="system" id="n3a-re-GVZ"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="cHl-dF-wCo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj5-1b-gGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4899" y="-1201"/>
+            <point key="canvasLocation" x="4899" y="-1166"/>
         </scene>
         <!--Item-->
         <scene sceneID="bPe-Hl-OVa">
@@ -361,8 +353,14 @@
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
