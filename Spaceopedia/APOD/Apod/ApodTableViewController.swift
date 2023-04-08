@@ -11,7 +11,6 @@ class ApodTableViewController: UITableViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
