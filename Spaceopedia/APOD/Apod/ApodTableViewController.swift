@@ -23,9 +23,9 @@ class ApodTableViewController: UITableViewController {
     
     @IBOutlet weak var shareButton: UIButton!
     
-    let apodController = ApodController()
-    
     var apod: Apod?
+    
+    var likedApods: [Date:Apod] = [Date:Apod]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +38,9 @@ class ApodTableViewController: UITableViewController {
             do {
                 let date = datePicker.date.description.prefix(10)
                 let query = ["api_key":"DEMO_KEY", "date":"\(date)"]
-                let apod = try await apodController.fetchApodInfo(query: query)
+                apod = try await ApodController.fetchApodInfo(query: query)
                 
-                updateUI(apod: apod)
+                updateUI(apod: apod!)
             }catch {
                 updateUI(error: error)
             }
@@ -52,6 +52,9 @@ class ApodTableViewController: UITableViewController {
     /// Initial updates to the UI for when the app is fetching APOD from the NASA API.
     func fetchingApodViewUpdate()
     {
+        // Gets the updated(latest) liked APODS list everytime fetching a new APOD.
+        likedApods = ApodController.loadLikedApodsFromFile()
+        
         imageView.isHidden = true
         titleLabel.text = "Fetching Apod..."
         descriptionTextView.text = ""
@@ -67,12 +70,13 @@ class ApodTableViewController: UITableViewController {
     {
         Task {
             do {
-                imageView.image = try await apodController.fetchApodImage(imageUrl: apod.url)
+                imageView.image = try await ApodController.fetchApodImage(imageUrl: apod.url)
                 imageView.isHidden = false
                 titleLabel.text = apod.title
                 descriptionTextView.text = apod.description
                 likeButton.isEnabled = true
                 likeButton.isHidden = false
+                likeButton.isLiked = likedApods.contains(where: {$1 == apod})
                 if let copyright = apod.copyright {
                     copyrightLabel.text = "©\(copyright)"
                 }
@@ -106,8 +110,8 @@ class ApodTableViewController: UITableViewController {
                 fetchingApodViewUpdate()
                 let date = datePicker.date.description.prefix(10)
                 let query = ["api_key":"DEMO_KEY", "date":"\(date)"]
-                let apod = try await apodController.fetchApodInfo(query: query)
-                updateUI(apod: apod)
+                apod = try await ApodController.fetchApodInfo(query: query)
+                updateUI(apod: apod!)
             } catch {
                 updateUI(error: error)
             }
@@ -118,8 +122,22 @@ class ApodTableViewController: UITableViewController {
     {
         if sender.isLiked {
             print("Removed from the list.")
+            
+            if let apod = apod, let apodPresentAt = likedApods.firstIndex(where: {$1 == apod}) {
+                likedApods.remove(at: apodPresentAt)
+                
+                ApodController.saveLikedApodsToFile(apods: likedApods)
+            }
+            print(likedApods.count)
         } else {
             print("Added to the list.")
+            
+            if let apod = apod {
+                likedApods[datePicker.date] = apod
+            }
+            
+            ApodController.saveLikedApodsToFile(apods: likedApods)
+            print(likedApods.count)
         }
     }
 }

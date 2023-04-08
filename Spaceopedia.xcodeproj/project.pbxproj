@@ -57,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				C71B9E8229DEC07800B4F2AE /* ApodModel.swift */,
+				C71B9E8429DEC29F00B4F2AE /* ApodController.swift */,
 				C7690C9129E17366009B50EC /* Apod */,
 				C7690C9029E1734C009B50EC /* Liked */,
 			);
@@ -75,7 +76,6 @@
 		C7690C9129E17366009B50EC /* Apod */ = {
 			isa = PBXGroup;
 			children = (
-				C71B9E8429DEC29F00B4F2AE /* ApodController.swift */,
 				C7690C8E29E16D83009B50EC /* LikeButton.swift */,
 				C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */,
 			);

@@ -34,7 +34,7 @@ class ModulesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCellIdentifier", for: indexPath) as! ModuleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "moduleCell", for: indexPath) as! ModuleTableViewCell
 
         cell.titleLabel.text = Modules.allCases[indexPath.section].title
         cell.descriptionLabel.text = Modules.allCases[indexPath.section].description

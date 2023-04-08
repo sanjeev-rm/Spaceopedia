@@ -23,23 +23,41 @@ class LikedTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        if let likedApodsCount = ApodController.likedApods?.count {
+            return likedApodsCount
+        }
         return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+//        let likedTitleCell = tableView.dequeueReusableCell(withIdentifier: "LikedTitleCell", for: indexPath)
+        let likedCell = tableView.dequeueReusableCell(withIdentifier: "LikedCell", for: indexPath) as! LikedTableViewCell
+        
+//        if indexPath == IndexPath(row: 0, section: 0) {
+//            return likedCell
+//        } else {
+//            return likedCell
+//        }
+        
+        Task {
+            do {
+                let date = Array(ApodController.likedApods!.keys)[indexPath.section]
+                let apod = Array(ApodController.likedApods!.values)[indexPath.section]
+                let image = try await ApodController.fetchApodImage(imageUrl: apod.url)
+                likedCell.update(image: image, title: apod.title, date: date)
+            } catch {
+                print("Liked Apod cell image couldn't be fetched.")
+                likedCell.update(image: UIImage(systemName: "photo")!, title: "Image couldn't fetched.", date: Date())
+            }
+        }
+        
+        return likedCell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -85,5 +103,4 @@ class LikedTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
