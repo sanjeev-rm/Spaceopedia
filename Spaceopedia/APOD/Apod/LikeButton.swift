@@ -10,7 +10,7 @@ import UIKit
 class LikeButton: UIButton {
     
     let unlikedImage: UIImage = (UIImage(systemName: "heart")!.applyingSymbolConfiguration(.init(scale: .large))?.withTintColor(.gray, renderingMode: .alwaysOriginal))!
-    let likedImage: UIImage = UIImage(systemName: "heart.fill")!.applyingSymbolConfiguration(.init(scale: .large))!.withTintColor(.gray, renderingMode: .alwaysOriginal)
+    let likedImage: UIImage = UIImage(systemName: "heart.fill")!.applyingSymbolConfiguration(.init(scale: .large))!.withTintColor(UIColor(named: "heartRed")!, renderingMode: .alwaysOriginal)
     
     var isLiked: Bool = false {
         didSet {
