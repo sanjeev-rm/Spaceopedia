@@ -251,7 +251,7 @@
             </objects>
             <point key="canvasLocation" x="3663" y="-1562"/>
         </scene>
-        <!--Item-->
+        <!--Favourites-->
         <scene sceneID="iUs-fu-I0M">
             <objects>
                 <tableViewController id="ywF-rN-Czc" customClass="LikedTableViewController" customModule="Spaceopedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -317,7 +317,7 @@
                             <outlet property="delegate" destination="ywF-rN-Czc" id="dXu-c6-Xd2"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" image="heart.fill" catalog="system" id="n3a-re-GVZ"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="heart.fill" catalog="system" id="n3a-re-GVZ"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="cHl-dF-wCo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj5-1b-gGA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
