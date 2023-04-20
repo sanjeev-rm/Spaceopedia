@@ -21,34 +21,20 @@ class LikedApodTableViewController: UITableViewController {
     
     @IBOutlet weak var shareButton: UIButton!
     
-    var apod: Apod?
+    var likedApod: LikedApod?
     
     var apodImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if apod != nil {
+        if let likedApod = likedApod {
             do {
-                try updateUI(apod: apod!)
+                try updateUI(apod: likedApod.apod)
             } catch {
                 updateUI(error: error)
             }
         }
-        
-//        fetchingApodViewUpdate()
-//
-//        guard let apod = apod else { return }
-//
-//        if let apodImage = apodImage {
-//            updateUI(apod: apod, apodImage: apodImage)
-//        } else {
-//            do {
-//                try updateUI(apod: apod)
-//            } catch {
-//                updateUI(error: error)
-//            }
-//        }
     }
     
     //MARK: - Functions

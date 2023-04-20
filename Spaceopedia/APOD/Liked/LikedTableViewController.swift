@@ -54,6 +54,13 @@ class LikedTableViewController: UITableViewController {
         return likedCell
     }
     
+    @IBSegueAction func likedApodViewSegue(_ coder: NSCoder) -> LikedApodTableViewController? {
+        let selectedLikedApod = ApodController.likedApods![tableView.indexPathForSelectedRow!.section]
+        
+        var likedApodVC = LikedApodTableViewController(coder: coder)
+        likedApodVC?.likedApod = selectedLikedApod
+        return likedApodVC
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
