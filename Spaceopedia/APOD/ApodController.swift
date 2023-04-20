@@ -56,7 +56,7 @@ class ApodController
 extension ApodController
 {
     /// All the liked APODS.
-    static var likedApods: [Date:Apod]? {
+    static var likedApods: [LikedApod]? {
         return ApodController.loadLikedApodsFromFile()
     }
     
@@ -73,7 +73,7 @@ extension ApodController
     }
     
     /// Saves an array of APODS to the disk.
-    static func saveLikedApodsToFile(apods: [Date:Apod])
+    static func saveLikedApodsToFile(apods: [LikedApod])
     {
         let pListEncoder = PropertyListEncoder()
         if let encodedLikedApods = try? pListEncoder.encode(apods) {
@@ -82,13 +82,13 @@ extension ApodController
     }
     
     /// Loads the array of APODS from the disk.
-    static func loadLikedApodsFromFile() -> [Date:Apod]
+    static func loadLikedApodsFromFile() -> [LikedApod]
     {
         let pListDecoder = PropertyListDecoder()
         if let retrievedLikedApods = try? Data(contentsOf: likedApodsPlistUrl),
-           let decodedLikedApods = try? pListDecoder.decode([Date:Apod].self, from: retrievedLikedApods) {
+           let decodedLikedApods = try? pListDecoder.decode([LikedApod].self, from: retrievedLikedApods) {
             return decodedLikedApods
         }
-        return [:]
+        return []
     }
 }

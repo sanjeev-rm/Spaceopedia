@@ -25,7 +25,7 @@ class ApodTableViewController: UITableViewController {
     
     var apod: Apod?
     
-    var likedApods: [Date:Apod] = [Date:Apod]()
+    var likedApods: [LikedApod] = [LikedApod]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +75,7 @@ class ApodTableViewController: UITableViewController {
                 descriptionTextView.text = apod.description
                 likeButton.isEnabled = true
                 likeButton.isHidden = false
-                likeButton.isLiked = likedApods.contains(where: {$1 == apod})
+                likeButton.isLiked = likedApods.contains(where: {$0.apod == apod})
                 if let copyright = apod.copyright {
                     copyrightLabel.text = "©\(copyright)"
                 }
@@ -122,7 +122,7 @@ class ApodTableViewController: UITableViewController {
         if sender.isLiked {
             print("Removed from the list.")
             
-            if let apod = apod, let apodPresentAt = likedApods.firstIndex(where: {$1 == apod}) {
+            if let apod = apod, let apodPresentAt = likedApods.firstIndex(where: {$0.apod == apod}) {
                 likedApods.remove(at: apodPresentAt)
                 
                 ApodController.saveLikedApodsToFile(apods: likedApods)
@@ -132,7 +132,7 @@ class ApodTableViewController: UITableViewController {
             print("Added to the list.")
             
             if let apod = apod {
-                likedApods[datePicker.date] = apod
+                likedApods.append(LikedApod(date: datePicker.date, apod: apod))
             }
             
             ApodController.saveLikedApodsToFile(apods: likedApods)

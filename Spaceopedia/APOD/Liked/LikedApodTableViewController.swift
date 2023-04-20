@@ -28,6 +28,14 @@ class LikedApodTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if apod != nil {
+            do {
+                try updateUI(apod: apod!)
+            } catch {
+                updateUI(error: error)
+            }
+        }
+        
 //        fetchingApodViewUpdate()
 //
 //        guard let apod = apod else { return }
@@ -72,7 +80,7 @@ class LikedApodTableViewController: UITableViewController {
             descriptionTextView.text = apod.description
             likeButton.isEnabled = true
             likeButton.isHidden = false
-            likeButton.isLiked = ApodController.likedApods!.contains(where: {$1 == apod})
+            likeButton.isLiked = ApodController.likedApods!.contains(where: {$0.apod == apod})
             if let copyright = apod.copyright {
                 copyrightLabel.text = "©\(copyright)"
             }
@@ -90,7 +98,7 @@ class LikedApodTableViewController: UITableViewController {
         descriptionTextView.text = apod.description
         likeButton.isEnabled = true
         likeButton.isHidden = false
-        likeButton.isLiked = ApodController.likedApods!.contains(where: {$1 == apod})
+        likeButton.isLiked = ApodController.likedApods!.contains(where: {$0.apod == apod})
         if let copyright = apod.copyright {
             copyrightLabel.text = "©\(copyright)"
         }

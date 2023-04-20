@@ -8,7 +8,7 @@
 import UIKit
 
 class LikedTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +39,8 @@ class LikedTableViewController: UITableViewController {
         
         Task {
             do {
-                let date = Array(ApodController.likedApods!.keys)[indexPath.section]
-                let apod = Array(ApodController.likedApods!.values)[indexPath.section]
+                let date = ApodController.likedApods![indexPath.section].date
+                let apod = ApodController.likedApods![indexPath.section].apod
                 likedCell.activityIndicator.startAnimating()
                 let image = try await ApodController.fetchApodImage(imageUrl: apod.url)
                 likedCell.activityIndicator.stopAnimating()
@@ -53,7 +53,7 @@ class LikedTableViewController: UITableViewController {
         
         return likedCell
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -89,22 +89,14 @@ class LikedTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
-
+    
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        let likedApodVC = segue.destination as! LikedApodTableViewController
         
         // Pass the selected object to the new view controller.
-        if let selectedCellIndexPath = tableView.indexPathForSelectedRow {
-            let likedApod = Array(ApodController.likedApods!.values)[selectedCellIndexPath.section]
-            likedApodVC.apod = likedApod
-        }
-        
-        
-        present(likedApodVC, animated: true)
     }
      */
 }

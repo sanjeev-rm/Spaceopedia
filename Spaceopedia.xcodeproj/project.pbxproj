@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C719CE3329F15C7600BF7363 /* LikedApodModel.swift */; };
 		C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8229DEC07800B4F2AE /* ApodModel.swift */; };
 		C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8429DEC29F00B4F2AE /* ApodController.swift */; };
 		C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C719CE3329F15C7600BF7363 /* LikedApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedApodModel.swift; sourceTree = "<group>"; };
 		C71B9E8229DEC07800B4F2AE /* ApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodModel.swift; sourceTree = "<group>"; };
 		C71B9E8429DEC29F00B4F2AE /* ApodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodController.swift; sourceTree = "<group>"; };
 		C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodTableViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		C7690C9029E1734C009B50EC /* Liked */ = {
 			isa = PBXGroup;
 			children = (
+				C719CE3329F15C7600BF7363 /* LikedApodModel.swift */,
 				C7690C9229E173B1009B50EC /* LikedTableViewCell.swift */,
 				C7690C9429E173D4009B50EC /* LikedTableViewController.swift */,
 				C72AFE6E29E9CDC70041A379 /* LikedApodTableViewController.swift */,
@@ -196,6 +199,7 @@
 				C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */,
 				C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */,
 				C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */,
+				C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */,
 				C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */,
 				C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */,
 				C7690C9529E173D4009B50EC /* LikedTableViewController.swift in Sources */,
