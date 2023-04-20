@@ -47,7 +47,7 @@ class LikedTableViewController: UITableViewController {
                 likedCell.update(image: image, title: apod.title, date: date)
             } catch {
                 print("Liked Apod cell image couldn't be fetched.")
-                likedCell.update(image: UIImage(systemName: "photo")!, title: "Image couldn't fetched.", date: Date())
+                likedCell.update(image: UIImage(systemName: "photo")!, title: "Image couldn't be fetched.", date: Date())
             }
         }
         
@@ -95,7 +95,16 @@ class LikedTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        let likedApodVC = segue.destination as! LikedApodTableViewController
+        
         // Pass the selected object to the new view controller.
+        if let selectedCellIndexPath = tableView.indexPathForSelectedRow {
+            let likedApod = Array(ApodController.likedApods!.values)[selectedCellIndexPath.section]
+            likedApodVC.apod = likedApod
+        }
+        
+        
+        present(likedApodVC, animated: true)
     }
-    */
+     */
 }

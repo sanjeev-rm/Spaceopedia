@@ -10,6 +10,7 @@
 		C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8229DEC07800B4F2AE /* ApodModel.swift */; };
 		C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8429DEC29F00B4F2AE /* ApodController.swift */; };
 		C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */; };
+		C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72AFE6E29E9CDC70041A379 /* LikedApodTableViewController.swift */; };
 		C7690C8F29E16D83009B50EC /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7690C8E29E16D83009B50EC /* LikeButton.swift */; };
 		C7690C9329E173B1009B50EC /* LikedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7690C9229E173B1009B50EC /* LikedTableViewCell.swift */; };
 		C7690C9529E173D4009B50EC /* LikedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7690C9429E173D4009B50EC /* LikedTableViewController.swift */; };
@@ -27,6 +28,7 @@
 		C71B9E8229DEC07800B4F2AE /* ApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodModel.swift; sourceTree = "<group>"; };
 		C71B9E8429DEC29F00B4F2AE /* ApodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodController.swift; sourceTree = "<group>"; };
 		C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodTableViewController.swift; sourceTree = "<group>"; };
+		C72AFE6E29E9CDC70041A379 /* LikedApodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedApodTableViewController.swift; sourceTree = "<group>"; };
 		C7690C8E29E16D83009B50EC /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		C7690C9229E173B1009B50EC /* LikedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTableViewCell.swift; sourceTree = "<group>"; };
 		C7690C9429E173D4009B50EC /* LikedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTableViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				C7690C9229E173B1009B50EC /* LikedTableViewCell.swift */,
 				C7690C9429E173D4009B50EC /* LikedTableViewController.swift */,
+				C72AFE6E29E9CDC70041A379 /* LikedApodTableViewController.swift */,
 			);
 			path = Liked;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				C7690C8F29E16D83009B50EC /* LikeButton.swift in Sources */,
 				C7A0843C29D4BC01002DB362 /* AppDelegate.swift in Sources */,
 				C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */,
+				C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */,
 				C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */,
 				C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */,
 				C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */,

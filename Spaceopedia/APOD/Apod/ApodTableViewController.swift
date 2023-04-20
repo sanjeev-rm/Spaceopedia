@@ -139,4 +139,22 @@ class ApodTableViewController: UITableViewController {
             print(likedApods.count)
         }
     }
+    
+    @IBAction func shareButtonTapped(_ sender: UIButton)
+    {
+        guard let apod = apod else { return }
+        
+        let mediaUrl = apod.url
+        let description = apod.description
+        
+        var activityItems: [Any]
+        if let image = imageView.image {
+            activityItems = [image, description]
+        } else {
+            activityItems = [mediaUrl, description]
+        }
+        
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        present(activityVC, animated: true)
+    }
 }
