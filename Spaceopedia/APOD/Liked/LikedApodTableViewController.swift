@@ -49,6 +49,8 @@ class LikedApodTableViewController: UITableViewController {
             }
         } else if let likedApodError = likedApodError {
             updateUIWithError(likedApodError: likedApodError)
+        } else {
+            updateUIWithError(likedApodError: LikedApodError())
         }
     }
     

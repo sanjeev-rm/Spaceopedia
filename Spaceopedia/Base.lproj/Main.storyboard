@@ -178,7 +178,7 @@
                                                             <color key="backgroundColor" name="BackgroundColor"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec tellus tincidunt est mollis accumsan sit amet at massa. Nunc posuere tellus sed cursus varius. Donec mattis nulla vitae dolor luctus, at porttitor libero laoreet. Cras fringilla, dui quis blandit consequat, nisi orci sagittis augue, vel accumsan ipsum magna sit amet dolor. Vivamus at viverra neque, a sodales est. Praesent non elementum sapien. Nunc id ex at justo ullamcorper molestie.</string>
                                                             <color key="textColor" name="BodyColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
@@ -424,7 +424,7 @@
                                                             <color key="backgroundColor" name="BackgroundColor"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec tellus tincidunt est mollis accumsan sit amet at massa. Nunc posuere tellus sed cursus varius. Donec mattis nulla vitae dolor luctus, at porttitor libero laoreet. Cras fringilla, dui quis blandit consequat, nisi orci sagittis augue, vel accumsan ipsum magna sit amet dolor. Vivamus at viverra neque, a sodales est. Praesent non elementum sapien. Nunc id ex at justo ullamcorper molestie.</string>
                                                             <color key="textColor" name="BodyColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
