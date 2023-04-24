@@ -9,6 +9,9 @@ import UIKit
 
 class LikedTableViewController: UITableViewController {
     
+    /// Instance of UIRefreshController for the pull-to-refresh functionality.
+    private var pullRefresh = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +20,20 @@ class LikedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Implementing the Pull-to-Refresh functinality.
+        pullRefresh.attributedTitle = NSAttributedString("")
+        pullRefresh.addTarget(self, action: #selector(pulledRefreshController(_:)), for: .valueChanged)
+        tableView.addSubview(pullRefresh)
+    }
+    
+    /// @objc sction function for the pull to refresh functionality.
+    @objc func pulledRefreshController(_ sender: Any)
+    {
+        // Reloading the data.
+        tableView.reloadData()
+        // Ending the refreshing.
+        pullRefresh.endRefreshing()
     }
 
     // MARK: - Table view data source
