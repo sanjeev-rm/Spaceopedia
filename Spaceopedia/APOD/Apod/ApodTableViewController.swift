@@ -27,6 +27,9 @@ class ApodTableViewController: UITableViewController {
     
     var likedApods: [LikedApod] = [LikedApod]()
     
+    /// Instance of UIRefreshController for the pull-to-refresh functionality.
+    private var pullRefresh = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,9 +47,24 @@ class ApodTableViewController: UITableViewController {
                 updateUI(error: error)
             }
         }
+        
+        // Implementing the Pull-to-Refresh functinality.
+        pullRefresh.attributedTitle = NSAttributedString("")
+        pullRefresh.addTarget(self, action: #selector(pulledToRefresh(_:)), for: .valueChanged)
+        tableView.addSubview(pullRefresh)
     }
     
-    //MARK: - Functions
+    // MARK: - @objc action function.
+    
+    /// @objc sction function for the pull to refresh functionality.
+    /// This is the function that is run when the user pulls to refresh the view.
+    @objc func pulledToRefresh(_ sender: Any)
+    {
+        tableView.reloadData()
+        pullRefresh.endRefreshing()
+    }
+    
+    // MARK: - Functions
     
     /// Initial updates to the UI for when the app is fetching APOD from the NASA API.
     func fetchingApodViewUpdate()
