@@ -7,6 +7,15 @@
 
 import UIKit
 
+/// This represents an Error model for the Liked Apod VC.
+/// When creating an instance of this VC and there's an error instead of an APOD then you can create an error of this type.
+/// And set the optional parameter of this type in the VC. So that the UI of this VC updates with respect to this LikedApodError instance given.
+struct LikedApodError
+{
+    var title: String?
+    var message: String?
+}
+
 class LikedApodTableViewController: UITableViewController {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -25,6 +34,10 @@ class LikedApodTableViewController: UITableViewController {
     
     var apodImage: UIImage?
     
+    /// The likedApodError used to update the UI with custom error title and message.
+    /// Only updates UI with this when the VC loads and the likedApod property is nil.
+    var likedApodError: LikedApodError?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +47,8 @@ class LikedApodTableViewController: UITableViewController {
             } catch {
                 updateUI(error: error)
             }
+        } else if let likedApodError = likedApodError {
+            updateUIWithError(likedApodError: likedApodError)
         }
     }
     
@@ -51,6 +66,7 @@ class LikedApodTableViewController: UITableViewController {
         likeButton.isEnabled = false
         likeButton.isHidden = true
         copyrightLabel.text = ""
+        copyrightLabel.isHidden = true
         shareButton.isEnabled = false
         shareButton.isHidden = true
     }
@@ -69,6 +85,7 @@ class LikedApodTableViewController: UITableViewController {
             likeButton.isLiked = ApodController.likedApods!.contains(where: {$0.apod == apod})
             if let copyright = apod.copyright {
                 copyrightLabel.text = "©\(copyright)"
+                copyrightLabel.isHidden = false
             }
             shareButton.isEnabled = true
             shareButton.isHidden = false
@@ -87,6 +104,7 @@ class LikedApodTableViewController: UITableViewController {
         likeButton.isLiked = ApodController.likedApods!.contains(where: {$0.apod == apod})
         if let copyright = apod.copyright {
             copyrightLabel.text = "©\(copyright)"
+            copyrightLabel.isHidden = false
         }
         shareButton.isEnabled = true
         shareButton.isHidden = false
@@ -99,6 +117,21 @@ class LikedApodTableViewController: UITableViewController {
         imageView.isHidden = true
         titleLabel.text = "Could not fetch Apod...🫤"
         descriptionTextView.text = "# Check the wifi connection.\n# Try another date.\nIf still not working try again after an hour.\nIf not, try tommorow."
+        likeButton.isEnabled = false
+        likeButton.isHidden = true
+        copyrightLabel.text = ""
+        copyrightLabel.isHidden = true
+        shareButton.isEnabled = false
+        shareButton.isHidden = true
+    }
+    
+    /// Updates the UI with custom error title and message.
+    /// Used for when an unfortunate error occurs.
+    func updateUIWithError(likedApodError: LikedApodError)
+    {
+        imageView.isHidden = true
+        titleLabel.text = likedApodError.title != nil ? likedApodError.title : "Error..."
+        descriptionTextView.text = likedApodError.message != nil ? likedApodError.message : "There seems to be an error."
         likeButton.isEnabled = false
         likeButton.isHidden = true
         copyrightLabel.text = ""

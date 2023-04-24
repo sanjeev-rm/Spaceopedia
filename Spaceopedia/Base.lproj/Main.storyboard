@@ -161,7 +161,7 @@
                                                                     <buttonConfiguration key="configuration" style="plain">
                                                                         <imageReference key="image" image="suit.heart" catalog="system" renderingMode="hierarchical-single">
                                                                             <hierarchicalColors>
-                                                                                <color systemColor="labelColor"/>
+                                                                                <color name="heartBlue"/>
                                                                                 <color systemColor="secondaryLabelColor"/>
                                                                                 <color systemColor="tertiaryLabelColor"/>
                                                                             </hierarchicalColors>
@@ -506,9 +506,9 @@
         <namedColor name="TitleColor2">
             <color red="0.23137254901960785" green="0.24705882352941178" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="heartBlue">
+            <color red="0.38039215686274508" green="0.44313725490196076" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="quaternaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

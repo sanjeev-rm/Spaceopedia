@@ -55,9 +55,16 @@ class LikedTableViewController: UITableViewController {
     }
     
     @IBSegueAction func likedApodViewSegue(_ coder: NSCoder) -> LikedApodTableViewController? {
+        // This condition prevents the app from crashing when then user switches from the liked apods to apod page and dislikes an apod then goes back to the liked apods before reloading the liked apods page then selected the diskliked.
+        guard ApodController.likedApods!.count > tableView.indexPathForSelectedRow!.section else {
+            let likedApodVC = LikedApodTableViewController(coder: coder)
+            likedApodVC?.likedApodError = LikedApodError(title: "Apod not in favourites.", message: "Selected Apod is not present in the favourites.")
+            return likedApodVC
+        }
+        
         let selectedLikedApod = ApodController.likedApods![tableView.indexPathForSelectedRow!.section]
         
-        var likedApodVC = LikedApodTableViewController(coder: coder)
+        let likedApodVC = LikedApodTableViewController(coder: coder)
         likedApodVC?.likedApod = selectedLikedApod
         return likedApodVC
     }
