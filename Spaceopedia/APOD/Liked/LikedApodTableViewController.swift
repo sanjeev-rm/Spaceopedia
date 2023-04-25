@@ -59,9 +59,6 @@ class LikedApodTableViewController: UITableViewController {
     /// Initial updates to the UI for when the app is fetching APOD from the NASA API.
     func fetchingApodViewUpdate()
     {
-        // Gets the updated(latest) liked APODS list everytime fetching a new APOD.
-//        likedApods = ApodController.loadLikedApodsFromFile()
-        
         imageView.isHidden = true
         titleLabel.text = "Fetching Apod..."
         descriptionTextView.text = ""
@@ -94,24 +91,6 @@ class LikedApodTableViewController: UITableViewController {
         }
     }
     
-    /// Updates the UI with an APOD and the image provided as the apod image.
-    func updateUI(apod: Apod, apodImage image: UIImage)
-    {
-        imageView.image = image
-        imageView.isHidden = false
-        titleLabel.text = apod.title
-        descriptionTextView.text = apod.description
-        likeButton.isEnabled = true
-        likeButton.isHidden = false
-        likeButton.isLiked = ApodController.likedApods!.contains(where: {$0.apod == apod})
-        if let copyright = apod.copyright {
-            copyrightLabel.text = "©\(copyright)"
-            copyrightLabel.isHidden = false
-        }
-        shareButton.isEnabled = true
-        shareButton.isHidden = false
-    }
-    
     /// Updates the UI with an error.
     /// Used when there's an error.
     func updateUI(error: Error)
@@ -140,7 +119,49 @@ class LikedApodTableViewController: UITableViewController {
         shareButton.isEnabled = false
         shareButton.isHidden = true
     }
-
+    
+    // MARK: - Action functions
+    
+    @IBAction func likeButtonTapped(_ sender: LikeButton)
+    {
+        if sender.isLiked {
+            // Means that the button that sent this function was liked but after clicking it must be removed.
+            // Therefore removed.
+            if let likedApod = likedApod,
+               let apodPresentAt = ApodController.likedApods?.firstIndex(where: { $0.apod == likedApod.apod }),
+               var likedApods = ApodController.likedApods {
+                likedApods.remove(at: apodPresentAt)
+                ApodController.saveLikedApodsToFile(apods: likedApods)
+            }
+        } else {
+            // Means that the button that sent this function was not liked but after clicking it must be likd and added to the likedApods list.
+            // Therefore added to the list.
+            if let likedApod = likedApod,
+               var likedApods = ApodController.likedApods {
+                likedApods.append(likedApod)
+                ApodController.saveLikedApodsToFile(apods: likedApods)
+            }
+        }
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: UIButton)
+    {
+        guard let likedApod = likedApod else { return }
+        
+        let mediaUrl = likedApod.apod.url
+        let description = likedApod.apod.description
+        
+        var activityItems: [Any]
+        if let image = imageView.image {
+            activityItems = [image, description]
+        } else {
+            activityItems = [mediaUrl, description]
+        }
+        
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        present(activityVC, animated: true)
+    }
+    
     // MARK: - Table view data source
     
     /*
