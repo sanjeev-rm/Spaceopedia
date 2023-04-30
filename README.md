@@ -1,10 +1,10 @@
 # Spaceopedia
 An Space App.
 
-## [Design & Plan](https://drive.google.com/file/d/1REiUXYZGVUqOHrslr1DMJ9Jx5VJL9ZN_/view?usp=sharing)
+### [Design & Plan](https://drive.google.com/file/d/1REiUXYZGVUqOHrslr1DMJ9Jx5VJL9ZN_/view?usp=sharing)
 This contains the Research and the projects vision and ideas.
 
-## Cocoapods
+### Cocoapods
 - youtube-ios-player-helper
 
 ## Versions
