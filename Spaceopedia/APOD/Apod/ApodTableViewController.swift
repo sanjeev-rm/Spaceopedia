@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
-class ApodTableViewController: UITableViewController {
+class ApodTableViewController: UITableViewController, YTPlayerViewDelegate {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -22,6 +23,8 @@ class ApodTableViewController: UITableViewController {
     @IBOutlet weak var copyrightLabel: UILabel!
     
     @IBOutlet weak var shareButton: UIButton!
+    
+    @IBOutlet var videoPlayerView: YTPlayerView!
     
     var apod: Apod?
     
@@ -60,7 +63,7 @@ class ApodTableViewController: UITableViewController {
     /// This is the function that is run when the user pulls to refresh the view.
     @objc func pulledToRefresh(_ sender: Any)
     {
-        tableView.reloadData()
+        viewDidLoad()
         pullRefresh.endRefreshing()
     }
     
@@ -73,6 +76,7 @@ class ApodTableViewController: UITableViewController {
         likedApods = ApodController.loadLikedApodsFromFile()
         
         imageView.isHidden = true
+        videoPlayerView.isHidden = true
         titleLabel.text = "Fetching Apod..."
         descriptionTextView.text = ""
         likeButton.isEnabled = false
@@ -87,8 +91,16 @@ class ApodTableViewController: UITableViewController {
     {
         Task {
             do {
-                imageView.image = try await ApodController.fetchApodImage(imageUrl: apod.url)
-                imageView.isHidden = false
+                if apod.mediaType == "image" {
+                    imageView.image = try await ApodController.fetchApodImage(imageUrl: apod.url)
+                    imageView.isHidden = false
+                    videoPlayerView.isHidden = true
+                } else if apod.mediaType == "video" {
+                    videoPlayerView.load(withVideoId: "\(apod.url.lastPathComponent)") // .lastPathComponent gives us the video ID.
+                    videoPlayerView.delegate = self
+                    videoPlayerView.isHidden = false
+                    imageView.isHidden = true
+                }
                 titleLabel.text = apod.title
                 descriptionTextView.text = apod.description
                 likeButton.isEnabled = true
@@ -110,6 +122,7 @@ class ApodTableViewController: UITableViewController {
     func updateUI(error: Error)
     {
         imageView.isHidden = true
+        videoPlayerView.isHidden = true
         titleLabel.text = "Could not fetch Apod...🫤"
         descriptionTextView.text = "# Check the wifi connection.\n# Try another date.\nIf still not working try again after an hour.\nIf not, try tommorow."
         likeButton.isEnabled = false
@@ -175,5 +188,11 @@ class ApodTableViewController: UITableViewController {
         
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         present(activityVC, animated: true)
+    }
+    
+    // MARK: - Functions from YTPlayerViewDelegate
+    
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        videoPlayerView.playVideo()
     }
 }

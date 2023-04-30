@@ -124,15 +124,15 @@
                             </tableViewSection>
                             <tableViewSection id="pwD-pa-vpj">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="706" id="Bx7-uB-mwB">
-                                        <rect key="frame" x="20" y="131.5" width="374" height="706"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="776" id="Bx7-uB-mwB">
+                                        <rect key="frame" x="20" y="131.5" width="374" height="776"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bx7-uB-mwB" id="ECH-es-kRj">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="706"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="776"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-On-OBc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="706"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="776"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleImage1" translatesAutoresizingMaskIntoConstraints="NO" id="mX7-T8-rGf">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
@@ -146,17 +146,30 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqe-Cn-Buh" customClass="YTPlayerView">
+                                                            <rect key="frame" x="0.0" y="324" width="374" height="300"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="300" id="JkM-Mp-oDO"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lLR-fm-ZEF">
-                                                            <rect key="frame" x="0.0" y="324" width="374" height="34"/>
+                                                            <rect key="frame" x="0.0" y="648" width="374" height="28"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stars over the rome" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9v1-rw-dfv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="329.5" height="34"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="329.5" height="28"/>
                                                                     <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
                                                                     <color key="textColor" name="TitleColor2"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEi-cV-V21" customClass="LikeButton" customModule="Spaceopedia" customModuleProvider="target">
-                                                                    <rect key="frame" x="337.5" y="0.0" width="36.5" height="34"/>
+                                                                    <rect key="frame" x="337.5" y="0.0" width="36.5" height="28"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain">
                                                                         <imageReference key="image" image="suit.heart" catalog="system" renderingMode="hierarchical-single">
@@ -174,7 +187,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6H-hl-WpO">
-                                                            <rect key="frame" x="0.0" y="382" width="374" height="274"/>
+                                                            <rect key="frame" x="0.0" y="700" width="374" height="32.5"/>
                                                             <color key="backgroundColor" name="BackgroundColor"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec tellus tincidunt est mollis accumsan sit amet at massa. Nunc posuere tellus sed cursus varius. Donec mattis nulla vitae dolor luctus, at porttitor libero laoreet. Cras fringilla, dui quis blandit consequat, nisi orci sagittis augue, vel accumsan ipsum magna sit amet dolor. Vivamus at viverra neque, a sodales est. Praesent non elementum sapien. Nunc id ex at justo ullamcorper molestie.</string>
                                                             <color key="textColor" name="BodyColor"/>
@@ -187,17 +200,17 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="K9Q-2c-gJL">
-                                                            <rect key="frame" x="0.0" y="680" width="374" height="26"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="K9Q-2c-gJL">
+                                                            <rect key="frame" x="0.0" y="756.5" width="374" height="19.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrD-gN-Psu">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="26"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQb-GV-b5H">
-                                                                    <rect key="frame" x="326" y="0.0" width="48" height="26"/>
+                                                                    <rect key="frame" x="326" y="0.0" width="48" height="19.5"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
                                                                     <connections>
@@ -239,6 +252,7 @@
                         <outlet property="likeButton" destination="KEi-cV-V21" id="biQ-ba-iTY"/>
                         <outlet property="shareButton" destination="tQb-GV-b5H" id="KG6-Bf-s0D"/>
                         <outlet property="titleLabel" destination="9v1-rw-dfv" id="fju-hE-EXd"/>
+                        <outlet property="videoPlayerView" destination="cqe-Cn-Buh" id="Cri-Xf-VCw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yu-3b-4TQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -395,17 +409,30 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yyW-7M-xPC">
-                                                            <rect key="frame" x="0.0" y="324" width="374" height="34"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqb-Lz-Wy3" customClass="YTPlayerView">
+                                                            <rect key="frame" x="0.0" y="324" width="374" height="300"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="300" id="eC7-F8-Dv6"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="16"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yyW-7M-xPC">
+                                                            <rect key="frame" x="0.0" y="648" width="374" height="7.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stars over the rome" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7z-ME-Igg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="329.5" height="34"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Stars over the rome" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7z-ME-Igg">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="329.5" height="7.5"/>
                                                                     <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
                                                                     <color key="textColor" name="TitleColor2"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paj-jV-Sw7" customClass="LikeButton" customModule="Spaceopedia" customModuleProvider="target">
-                                                                    <rect key="frame" x="337.5" y="0.0" width="36.5" height="34"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paj-jV-Sw7" customClass="LikeButton" customModule="Spaceopedia" customModuleProvider="target">
+                                                                    <rect key="frame" x="337.5" y="0.0" width="36.5" height="7.5"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain">
                                                                         <imageReference key="image" image="suit.heart" catalog="system" renderingMode="hierarchical-single">
@@ -422,8 +449,8 @@
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-be-C6b">
-                                                            <rect key="frame" x="0.0" y="382" width="374" height="283"/>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcw-be-C6b">
+                                                            <rect key="frame" x="0.0" y="679.5" width="374" height="0.0"/>
                                                             <color key="backgroundColor" name="BodygroundColorModal"/>
                                                             <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec tellus tincidunt est mollis accumsan sit amet at massa. Nunc posuere tellus sed cursus varius. Donec mattis nulla vitae dolor luctus, at porttitor libero laoreet. Cras fringilla, dui quis blandit consequat, nisi orci sagittis augue, vel accumsan ipsum magna sit amet dolor. Vivamus at viverra neque, a sodales est. Praesent non elementum sapien. Nunc id ex at justo ullamcorper molestie.</string>
                                                             <color key="textColor" name="BodyColor"/>
@@ -436,17 +463,17 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </textView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fk4-3B-OuV">
-                                                            <rect key="frame" x="0.0" y="689" width="374" height="34"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fk4-3B-OuV">
+                                                            <rect key="frame" x="0.0" y="703.5" width="374" height="19.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-m2-b2n">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="34"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="© Copyright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-m2-b2n">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgU-bX-nD0">
-                                                                    <rect key="frame" x="326" y="0.0" width="48" height="34"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgU-bX-nD0">
+                                                                    <rect key="frame" x="326" y="0.0" width="48" height="19.5"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
                                                                     <connections>
@@ -487,6 +514,7 @@
                         <outlet property="likeButton" destination="paj-jV-Sw7" id="SAj-C0-8UI"/>
                         <outlet property="shareButton" destination="hgU-bX-nD0" id="Cdl-t8-Ivu"/>
                         <outlet property="titleLabel" destination="J7z-ME-Igg" id="lTH-fR-qjr"/>
+                        <outlet property="videoPlayerView" destination="iqb-Lz-Wy3" id="kuL-SV-tat"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evn-BG-Mlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

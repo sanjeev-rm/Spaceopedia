@@ -51,6 +51,10 @@ class ApodController
         
         return image
     }
+    
+    static func fetchApodVideo(videoUrl: URL)
+    {
+    }
 }
 
 extension ApodController
