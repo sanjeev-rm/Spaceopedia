@@ -70,17 +70,20 @@
                     <connections>
                         <segue destination="F20-zH-T0z" kind="show" identifier="apodSegue" id="PBx-Fj-OaW"/>
                         <segue destination="NyT-kR-fV3" kind="show" identifier="spaceDefSegue" id="Z6Z-m5-Ter"/>
+                        <segue destination="Bpk-KW-SOy" kind="show" identifier="spacePicSegue" id="G5R-Vu-Tvr"/>
+                        <segue destination="WJX-CP-gNX" kind="show" identifier="spaceFactsSegue" id="aMl-gc-b6c"/>
+                        <segue destination="ris-Ay-n7w" kind="show" identifier="spaceNewsSegue" id="QPa-ix-lpD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjy-gp-plG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="-122"/>
+            <point key="canvasLocation" x="1900" y="-122"/>
         </scene>
         <!--SPACE DEF-->
         <scene sceneID="FEI-R3-efI">
             <objects>
                 <tableViewController id="NyT-kR-fV3" customClass="SpaceDefTableViewController" customModule="Spaceopedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="7sL-gO-JxX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="7sL-gO-JxX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
@@ -192,6 +195,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41r-Ct-aMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3760.8695652173915" y="-312.05357142857139"/>
+        </scene>
+        <!--Space Pic-->
+        <scene sceneID="wbd-oq-A66">
+            <objects>
+                <tableViewController id="Bpk-KW-SOy" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8Xx-9Q-ahu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Bpk-KW-SOy" id="lEd-W5-U0t"/>
+                            <outlet property="delegate" destination="Bpk-KW-SOy" id="otd-9a-pKN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Space Pic" id="Wdz-0m-xwK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYd-rG-2bm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3780" y="477"/>
+        </scene>
+        <!--Space Facts-->
+        <scene sceneID="Sbr-WG-pnf">
+            <objects>
+                <tableViewController id="WJX-CP-gNX" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="HWc-lW-oml">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="WJX-CP-gNX" id="B1u-xO-KmH"/>
+                            <outlet property="delegate" destination="WJX-CP-gNX" id="uJR-IT-RHc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Space Facts" id="YW0-Zr-ybL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lV-XH-BEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3771" y="1185"/>
+        </scene>
+        <!--Space News-->
+        <scene sceneID="VI7-uC-aGY">
+            <objects>
+                <tableViewController id="ris-Ay-n7w" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fxW-V0-WET">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="ris-Ay-n7w" id="GlE-AR-MWR"/>
+                            <outlet property="delegate" destination="ris-Ay-n7w" id="U2Q-Ve-q0i"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Space News" id="1yB-29-XvD"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-7Q-7Qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3761" y="1888"/>
         </scene>
         <!--APOD-->
         <scene sceneID="hgs-6a-Yg1">
@@ -775,6 +837,9 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
