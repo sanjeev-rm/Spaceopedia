@@ -24,6 +24,8 @@
 		C7A0844529D4BC02002DB362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A0844429D4BC02002DB362 /* Assets.xcassets */; };
 		C7A0844829D4BC02002DB362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A0844629D4BC02002DB362 /* LaunchScreen.storyboard */; };
 		C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */; };
+		C7CB22C42A095E0100E5B046 /* SpaceDefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */; };
+		C7EE846F2A0805D6005E2818 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE846E2A0805D6005E2818 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		C7A0844729D4BC02002DB362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7A0844929D4BC02002DB362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
+		C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceDefTableViewController.swift; sourceTree = "<group>"; };
+		C7EE846E2A0805D6005E2818 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		EB10CFF81166B7DB13673373 /* Pods_Spaceopedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spaceopedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32917BD7B4BCD8FC8E07576 /* Pods-Spaceopedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaceopedia.debug.xcconfig"; path = "Target Support Files/Pods-Spaceopedia/Pods-Spaceopedia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +80,6 @@
 				F32917BD7B4BCD8FC8E07576 /* Pods-Spaceopedia.debug.xcconfig */,
 				16879BD2A17F629AB7A22D23 /* Pods-Spaceopedia.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,13 +140,23 @@
 				C793A4C929D54C500071B566 /* Modules.swift */,
 				C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */,
 				C793A4CB29D551D40071B566 /* ModulesTableViewController.swift */,
+				C7EE846E2A0805D6005E2818 /* ImageViewController.swift */,
 				C71B9E8129DEC00C00B4F2AE /* APOD */,
+				C7CB22C22A095DCB00E5B046 /* Space Def */,
 				C7A0844129D4BC01002DB362 /* Main.storyboard */,
 				C7A0844429D4BC02002DB362 /* Assets.xcassets */,
 				C7A0844629D4BC02002DB362 /* LaunchScreen.storyboard */,
 				C7A0844929D4BC02002DB362 /* Info.plist */,
 			);
 			path = Spaceopedia;
+			sourceTree = "<group>";
+		};
+		C7CB22C22A095DCB00E5B046 /* Space Def */ = {
+			isa = PBXGroup;
+			children = (
+				C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */,
+			);
+			path = "Space Def";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C793A4CA29D54C500071B566 /* Modules.swift in Sources */,
+				C7CB22C42A095E0100E5B046 /* SpaceDefTableViewController.swift in Sources */,
 				C7690C9329E173B1009B50EC /* LikedTableViewCell.swift in Sources */,
 				C7690C8F29E16D83009B50EC /* LikeButton.swift in Sources */,
 				C7A0843C29D4BC01002DB362 /* AppDelegate.swift in Sources */,
@@ -271,6 +285,7 @@
 				C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */,
 				C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */,
 				C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */,
+				C7EE846F2A0805D6005E2818 /* ImageViewController.swift in Sources */,
 				C7690C9529E173D4009B50EC /* LikedTableViewController.swift in Sources */,
 				C793A4CC29D551D40071B566 /* ModulesTableViewController.swift in Sources */,
 				C7A0843E29D4BC01002DB362 /* SceneDelegate.swift in Sources */,

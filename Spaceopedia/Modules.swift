@@ -38,4 +38,14 @@ enum Modules: CaseIterable, Identifiable
         case .spaceNews: return "Top 10 space news"
         }
     }
+    
+    var segueIdentifier: String {
+        switch self {
+        case .apod: return "apodSegue"
+        case .spaceDef: return "spaceDefSegue"
+        case .spacePic: return "spacePicSegue"
+        case .spaceFacts: return "spaceFactsSegue"
+        case .spaceNews: return "spaceNewsSegue"
+        }
+    }
 }

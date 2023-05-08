@@ -14,6 +14,8 @@ class ApodTableViewController: UITableViewController, YTPlayerViewDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var imageViewButton: UIButton!
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var likeButton: LikeButton!
@@ -76,6 +78,7 @@ class ApodTableViewController: UITableViewController, YTPlayerViewDelegate {
         likedApods = ApodController.loadLikedApodsFromFile()
         
         imageView.isHidden = true
+        imageViewButton.isHidden = true
         videoPlayerView.isHidden = true
         titleLabel.text = "Fetching Apod..."
         descriptionTextView.text = ""
@@ -94,12 +97,14 @@ class ApodTableViewController: UITableViewController, YTPlayerViewDelegate {
                 if apod.mediaType == "image" {
                     imageView.image = try await ApodController.fetchApodImage(imageUrl: apod.url)
                     imageView.isHidden = false
+                    imageViewButton.isHidden = false
                     videoPlayerView.isHidden = true
                 } else if apod.mediaType == "video" {
                     videoPlayerView.load(withVideoId: "\(apod.url.lastPathComponent)") // .lastPathComponent gives us the video ID.
                     videoPlayerView.delegate = self
                     videoPlayerView.isHidden = false
                     imageView.isHidden = true
+                    imageViewButton.isHidden = true
                 }
                 titleLabel.text = apod.title
                 descriptionTextView.text = apod.description
@@ -122,6 +127,7 @@ class ApodTableViewController: UITableViewController, YTPlayerViewDelegate {
     func updateUI(error: Error)
     {
         imageView.isHidden = true
+        imageViewButton.isHidden = true
         videoPlayerView.isHidden = true
         titleLabel.text = "Could not fetch Apod...🫤"
         descriptionTextView.text = "# Check the wifi connection.\n# Try another date.\nIf still not working try again after an hour.\nIf not, try tommorow."
@@ -194,5 +200,21 @@ class ApodTableViewController: UITableViewController, YTPlayerViewDelegate {
     
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         videoPlayerView.playVideo()
+    }
+    
+    // MARK: - Segue Action functions.
+    
+    @IBSegueAction func imageViewSegue(_ coder: NSCoder, sender: Any?) -> ImageViewController? {
+        
+        let imageVC = ImageViewController(coder: coder)
+        if let image = imageView.image {
+            imageVC?.image = image
+        }
+        return imageVC
+    }
+    
+    // MARK: - Unwind function
+    
+    @IBAction func unwindToApodView(unwindSegue: UIStoryboardSegue) {
     }
 }
