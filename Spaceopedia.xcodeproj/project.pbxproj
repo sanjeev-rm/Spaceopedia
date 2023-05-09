@@ -25,6 +25,7 @@
 		C7A0844829D4BC02002DB362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A0844629D4BC02002DB362 /* LaunchScreen.storyboard */; };
 		C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */; };
 		C7CB22C42A095E0100E5B046 /* SpaceDefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */; };
+		C7CB22E62A0A962500E5B046 /* SourceToImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CB22E52A0A962500E5B046 /* SourceToImageView.swift */; };
 		C7EE846F2A0805D6005E2818 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE846E2A0805D6005E2818 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		C7A0844929D4BC02002DB362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
 		C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceDefTableViewController.swift; sourceTree = "<group>"; };
+		C7CB22E52A0A962500E5B046 /* SourceToImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceToImageView.swift; sourceTree = "<group>"; };
 		C7EE846E2A0805D6005E2818 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		EB10CFF81166B7DB13673373 /* Pods_Spaceopedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spaceopedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32917BD7B4BCD8FC8E07576 /* Pods-Spaceopedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaceopedia.debug.xcconfig"; path = "Target Support Files/Pods-Spaceopedia/Pods-Spaceopedia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 				C793A4C929D54C500071B566 /* Modules.swift */,
 				C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */,
 				C793A4CB29D551D40071B566 /* ModulesTableViewController.swift */,
-				C7EE846E2A0805D6005E2818 /* ImageViewController.swift */,
+				C7CB22E72A0A9B0F00E5B046 /* Image View Controller */,
 				C71B9E8129DEC00C00B4F2AE /* APOD */,
 				C7CB22C22A095DCB00E5B046 /* Space Def */,
 				C7A0844129D4BC01002DB362 /* Main.storyboard */,
@@ -157,6 +159,15 @@
 				C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */,
 			);
 			path = "Space Def";
+			sourceTree = "<group>";
+		};
+		C7CB22E72A0A9B0F00E5B046 /* Image View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C7CB22E52A0A962500E5B046 /* SourceToImageView.swift */,
+				C7EE846E2A0805D6005E2818 /* ImageViewController.swift */,
+			);
+			path = "Image View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 				C7CB22C42A095E0100E5B046 /* SpaceDefTableViewController.swift in Sources */,
 				C7690C9329E173B1009B50EC /* LikedTableViewCell.swift in Sources */,
 				C7690C8F29E16D83009B50EC /* LikeButton.swift in Sources */,
+				C7CB22E62A0A962500E5B046 /* SourceToImageView.swift in Sources */,
 				C7A0843C29D4BC01002DB362 /* AppDelegate.swift in Sources */,
 				C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */,
 				C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */,

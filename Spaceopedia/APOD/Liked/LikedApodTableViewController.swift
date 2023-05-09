@@ -193,6 +193,10 @@ class LikedApodTableViewController: UITableViewController, YTPlayerViewDelegate 
         if let image = imageView.image {
             imageVC?.image = image
         }
+        
+        // Setting the sourceView to SourceToImageView.likedApodView.
+        imageVC?.sourceView = .likedApodView
+        
         return imageVC
     }
     
