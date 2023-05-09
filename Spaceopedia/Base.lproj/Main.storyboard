@@ -66,13 +66,16 @@
                             <outlet property="delegate" destination="v6R-PR-0q4" id="p6I-wb-gdn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SPACEOPEDIA" id="7o4-ug-HGl"/>
+                    <navigationItem key="navigationItem" title="SPACEOPEDIA" id="7o4-ug-HGl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="290-hb-hqV"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="F20-zH-T0z" kind="show" identifier="apodSegue" id="PBx-Fj-OaW"/>
                         <segue destination="NyT-kR-fV3" kind="show" identifier="spaceDefSegue" id="Z6Z-m5-Ter"/>
                         <segue destination="Bpk-KW-SOy" kind="show" identifier="spacePicSegue" id="G5R-Vu-Tvr"/>
                         <segue destination="WJX-CP-gNX" kind="show" identifier="spaceFactsSegue" id="aMl-gc-b6c"/>
                         <segue destination="ris-Ay-n7w" kind="show" identifier="spaceNewsSegue" id="QPa-ix-lpD"/>
+                        <segue destination="nkg-Uj-HXV" kind="show" id="Sx7-hn-tok"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjy-gp-plG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -86,6 +89,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="7sL-gO-JxX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <sections>
                             <tableViewSection id="MXW-rY-KF9">
                                 <cells>
@@ -160,7 +164,7 @@
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oH0-7I-Zfj">
                                                     <rect key="frame" x="20" y="11" width="334" height="409"/>
-                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -196,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="3760.8695652173915" y="-312.05357142857139"/>
         </scene>
-        <!--Space Pic-->
+        <!--SPACE PIC-->
         <scene sceneID="wbd-oq-A66">
             <objects>
                 <tableViewController id="Bpk-KW-SOy" sceneMemberID="viewController">
@@ -210,50 +214,70 @@
                             <outlet property="delegate" destination="Bpk-KW-SOy" id="otd-9a-pKN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Space Pic" id="Wdz-0m-xwK"/>
+                    <navigationItem key="navigationItem" title="SPACE PIC" id="Wdz-0m-xwK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYd-rG-2bm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3780" y="477"/>
         </scene>
-        <!--Space Facts-->
+        <!--SPACE FACTS-->
         <scene sceneID="Sbr-WG-pnf">
             <objects>
                 <tableViewController id="WJX-CP-gNX" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="HWc-lW-oml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="WJX-CP-gNX" id="B1u-xO-KmH"/>
                             <outlet property="delegate" destination="WJX-CP-gNX" id="uJR-IT-RHc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Space Facts" id="YW0-Zr-ybL"/>
+                    <navigationItem key="navigationItem" title="SPACE FACTS" id="YW0-Zr-ybL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lV-XH-BEH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3771" y="1185"/>
         </scene>
-        <!--Space News-->
+        <!--SPACE NEWS-->
         <scene sceneID="VI7-uC-aGY">
             <objects>
                 <tableViewController id="ris-Ay-n7w" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fxW-V0-WET">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <connections>
                             <outlet property="dataSource" destination="ris-Ay-n7w" id="GlE-AR-MWR"/>
                             <outlet property="delegate" destination="ris-Ay-n7w" id="U2Q-Ve-q0i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Space News" id="1yB-29-XvD"/>
+                    <navigationItem key="navigationItem" title="SPACE NEWS" id="1yB-29-XvD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-7Q-7Qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3761" y="1888"/>
+            <point key="canvasLocation" x="3770" y="2702"/>
+        </scene>
+        <!--Planets & Moons-->
+        <scene sceneID="eHv-Hx-gPf">
+            <objects>
+                <tableViewController id="nkg-Uj-HXV" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6RD-2U-mgP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="nkg-Uj-HXV" id="Xh8-nY-jHy"/>
+                            <outlet property="delegate" destination="nkg-Uj-HXV" id="d49-Ou-gfz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Planets &amp; Moons" id="BJE-vp-BXY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAg-Ya-a7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3770" y="1950"/>
         </scene>
         <!--APOD-->
         <scene sceneID="hgs-6a-Yg1">
@@ -277,13 +301,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="77.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umk-o8-UVa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105.5" height="77.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="95.5" height="77.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                             <color key="textColor" name="TitleColor1"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-2b-axU">
-                                                            <rect key="frame" x="217.5" y="0.0" width="156.5" height="77.5"/>
+                                                            <rect key="frame" x="207.5" y="0.0" width="166.5" height="77.5"/>
                                                             <date key="minimumDate" timeIntervalSinceReferenceDate="-175066200">
                                                                 <!--1995-06-15 18:30:00 +0000-->
                                                             </date>
@@ -729,13 +753,13 @@
                                                             <rect key="frame" x="0.0" y="696" width="374" height="27"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-m2-b2n">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="328" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="27"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgU-bX-nD0">
-                                                                    <rect key="frame" x="328" y="0.0" width="46" height="27"/>
+                                                                    <rect key="frame" x="326" y="0.0" width="48" height="27"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
                                                                     <connections>
@@ -837,9 +861,6 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
