@@ -12,3 +12,4 @@ This contains the Research and the projects vision and ideas.
 - MVP (Minimum Viable Product)
 - Only contains the NASA APOD functionality.
 - Can save your favourite APODs.
+- Can share APODs.
