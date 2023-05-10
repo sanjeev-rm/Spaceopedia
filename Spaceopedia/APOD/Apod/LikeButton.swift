@@ -9,7 +9,7 @@ import UIKit
 
 class LikeButton: UIButton {
     
-    let unlikedImage: UIImage = (UIImage(systemName: "heart")!.applyingSymbolConfiguration(.init(scale: .large))?.withTintColor(.gray, renderingMode: .alwaysOriginal))!
+    let unlikedImage: UIImage = UIImage(systemName: "heart")!.applyingSymbolConfiguration(.init(scale: .large))!.withTintColor(.gray, renderingMode: .alwaysOriginal)
     let likedImage: UIImage = UIImage(systemName: "heart.fill")!.applyingSymbolConfiguration(.init(scale: .large))!.withTintColor(UIColor(named: "heartBlue")!, renderingMode: .alwaysOriginal)
     
     var isLiked: Bool = false {
@@ -24,7 +24,7 @@ class LikeButton: UIButton {
     
     override func awakeFromNib() {
         self.setImage(unlikedImage, for: .normal)
-        self.addTarget(self, action: #selector(buttonClicked(sender:)), for: UIControl.Event.touchUpInside)
+        self.addTarget(self, action: #selector(buttonClicked(sender:)), for: .touchUpInside)
     }
     
     @objc func buttonClicked(sender: UIButton) {
