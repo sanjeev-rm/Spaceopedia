@@ -117,7 +117,7 @@ class SpaceDefTableViewController: UITableViewController {
             return 0
         } else if fetchingDefinitionState {
             switch indexPath {
-            case IndexPath(row: 1, section: 2):
+            case IndexPath(row: 0, section: 2):
                 return tableView.estimatedRowHeight
             default:
                 return 0
@@ -127,14 +127,16 @@ class SpaceDefTableViewController: UITableViewController {
         // For when the app is not fetching the definition. i.e. The app has fetched the definition or threw error.
         // Also for the extended section row.
         // When we have got the definition.
-        if indexPath == IndexPath(row: 1, section: 3) {
+        // For the remaining rows(sections).
+        switch indexPath {
+        case IndexPath(row: 0, section: 2):
+            return 0
+        case IndexPath(row: 1, section: 2):
+            return 125
+        case IndexPath(row: 1, section: 3):
             // If the isDisclosed variable is true then makes height 243 to show the extended section row.
             return extendedDiscloseButton.isDisclosed ? 243 : 0
-        } else if indexPath == IndexPath(row: 0, section: 2) {
-            return 125
-        } else if indexPath == IndexPath(row: 1, section: 2) {
-            return 0
-        } else {
+        default:
             return tableView.estimatedRowHeight
         }
     }
