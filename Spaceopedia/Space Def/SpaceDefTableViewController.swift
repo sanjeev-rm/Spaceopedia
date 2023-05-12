@@ -15,6 +15,8 @@ class SpaceDefTableViewController: UITableViewController {
     @IBOutlet weak var extendedDiscloseButton: DiscloseButton!
     @IBOutlet weak var extendedDefinitionTextView: UITextView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // State when the app is fetching the definition.
     var fetchingDefinitionState: Bool = false {
         didSet {
@@ -41,7 +43,7 @@ class SpaceDefTableViewController: UITableViewController {
     func updateUIForFetchingDefinition() {
         fetchingDefinitionState = true
         nothingState = false
-        definitionTextView.text = "Fetching definition..."
+//        definitionTextView.text = "Fetching definition..."
     }
     
     /// Function updates the UI for when the app is in the nothing state. (i.e. like before even have entered anything)
@@ -67,8 +69,10 @@ class SpaceDefTableViewController: UITableViewController {
             Task {
                 do {
                     updateUIForFetchingDefinition()
+                    activityIndicator.startAnimating()
                     let definitionResponse = try await DefinitionController.fetchDefinition(word: word)
                     let extendedDefinitonResponse = try await DefinitionController.fetchExtendedDefinition(word: word)
+                    activityIndicator.stopAnimating()
                     definitionTextView.text = definitionResponse.meanings[0].definitions[0].definition
                     extendedDefinitionTextView.text = extendedDefinitonResponse.definition
                     updateUIForDefinition()
@@ -113,8 +117,8 @@ class SpaceDefTableViewController: UITableViewController {
             return 0
         } else if fetchingDefinitionState {
             switch indexPath {
-            case IndexPath(row: 0, section: 2):
-                return 125
+            case IndexPath(row: 1, section: 2):
+                return tableView.estimatedRowHeight
             default:
                 return 0
             }
@@ -128,6 +132,8 @@ class SpaceDefTableViewController: UITableViewController {
             return extendedDiscloseButton.isDisclosed ? 243 : 0
         } else if indexPath == IndexPath(row: 0, section: 2) {
             return 125
+        } else if indexPath == IndexPath(row: 1, section: 2) {
+            return 0
         } else {
             return tableView.estimatedRowHeight
         }
