@@ -86,7 +86,7 @@
         <scene sceneID="FEI-R3-efI">
             <objects>
                 <tableViewController id="NyT-kR-fV3" customClass="SpaceDefTableViewController" customModule="Spaceopedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="7sL-gO-JxX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="12" estimatedSectionHeaderHeight="-1" sectionFooterHeight="12" estimatedSectionFooterHeight="-1" id="7sL-gO-JxX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -94,7 +94,7 @@
                             <tableViewSection id="MXW-rY-KF9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="49" id="u5E-Zm-7Qc">
-                                        <rect key="frame" x="20" y="18" width="374" height="49"/>
+                                        <rect key="frame" x="20" y="12" width="374" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u5E-Zm-7Qc" id="Jcq-Cv-GRQ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
@@ -129,7 +129,7 @@
                             <tableViewSection id="COl-AE-RWX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="49" id="e43-JY-a4I">
-                                        <rect key="frame" x="20" y="103" width="374" height="49"/>
+                                        <rect key="frame" x="20" y="85" width="374" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e43-JY-a4I" id="Vct-a5-KnH">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
@@ -137,11 +137,14 @@
                                             <subviews>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xU-77-BjO">
                                                     <rect key="frame" x="143.5" y="7.5" width="87.5" height="34"/>
-                                                    <color key="tintColor" name="ButtonColor1"/>
+                                                    <color key="tintColor" name="ButtonColor2"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Look Up" cornerStyle="capsule" titleAlignment="center">
                                                         <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="lookUpButtonTapped:" destination="NyT-kR-fV3" eventType="touchUpInside" id="l7b-Sx-ZBG"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -156,7 +159,7 @@
                             <tableViewSection id="Zy2-zh-lrD">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="180" id="wtj-ju-0hc">
-                                        <rect key="frame" x="20" y="188" width="374" height="180"/>
+                                        <rect key="frame" x="20" y="158" width="374" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wtj-ju-0hc" id="8Cq-dN-48q">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="180"/>
@@ -166,7 +169,7 @@
                                                     <rect key="frame" x="20" y="11" width="334" height="158"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -186,7 +189,7 @@
                             <tableViewSection id="1Xb-np-Smi">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="49" id="xUL-mo-LYN">
-                                        <rect key="frame" x="20" y="404" width="374" height="49"/>
+                                        <rect key="frame" x="20" y="362" width="374" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xUL-mo-LYN" id="GQ6-CB-POr">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
@@ -216,7 +219,7 @@
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="243" id="SX1-nM-nUJ">
-                                        <rect key="frame" x="20" y="453" width="374" height="243"/>
+                                        <rect key="frame" x="20" y="411" width="374" height="243"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SX1-nM-nUJ" id="7DU-gJ-vrq">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="243"/>
@@ -226,7 +229,7 @@
                                                     <rect key="frame" x="20" y="11" width="334" height="221"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -252,6 +255,7 @@
                     <navigationItem key="navigationItem" title="SPACE DEF" id="fHb-7t-bCe"/>
                     <connections>
                         <outlet property="definitionTextView" destination="Q0Q-6f-BvT" id="Isj-I8-jbY"/>
+                        <outlet property="extendedDefinitionTextView" destination="MWa-Il-XTJ" id="SUK-Dv-eTp"/>
                         <outlet property="extendedDiscloseButton" destination="4yV-Q1-B3Q" id="PWc-q9-BWW"/>
                         <outlet property="lookUpButton" destination="1xU-77-BjO" id="eD9-9p-6Mo"/>
                         <outlet property="textField" destination="jWj-ef-QiU" id="hmR-Xi-f8G"/>
@@ -1380,6 +1384,9 @@
         </namedColor>
         <namedColor name="ButtonColor1">
             <color red="0.23137254901960785" green="0.24705882352941178" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ButtonColor2">
+            <color red="0.38039215686274508" green="0.44313725490196076" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TitleColor1">
             <color red="0.11764705882352941" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
