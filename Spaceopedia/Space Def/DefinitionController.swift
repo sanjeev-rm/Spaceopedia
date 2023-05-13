@@ -14,6 +14,7 @@ class DefinitionController
         case extendedNotFound
     }
     
+    /// Fetches the definition of the word given.
     static func fetchDefinition(word: String) async throws -> DictionaryResponse {
         let url = URL(string: "https://api.dictionaryapi.dev/api/v2/entries/en/\(word)")!
 
@@ -28,6 +29,7 @@ class DefinitionController
         return decodedDictionaryResponse.first!
     }
     
+    /// Fetches the extended definition of the word given.
     static func fetchExtendedDefinition(word: String) async throws -> ExtendedDefinition {
         let url = URL(string: "https://api.api-ninjas.com/v1/dictionary?word=\(word)")!
 
