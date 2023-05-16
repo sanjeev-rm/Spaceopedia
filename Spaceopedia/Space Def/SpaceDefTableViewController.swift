@@ -65,7 +65,7 @@ class SpaceDefTableViewController: UITableViewController {
     // MARK: - Action functions
     
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
-        if let word = textField.text {
+        if let word = textField.text, !word.isEmpty {
             Task {
                 do {
                     updateUIForFetchingDefinition()
