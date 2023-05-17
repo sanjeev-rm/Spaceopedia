@@ -22,6 +22,7 @@ struct PlanetMoon: Codable {
     var aroundPlanet: Planet?
     var discoveredBy: String
     var discoveryDate: String
+    var avgTemp: Double
     var bodyType: String
 }
 

@@ -15,7 +15,7 @@ class PlanetMoonController
     }
     
     /// Fetches the PlanetMoon response from the API.
-    func fetch(planetOrMoon: String) async throws -> PlanetMoon {
+    static func fetch(planetOrMoon: String) async throws -> PlanetMoon {
         var url = URL(string: "https://api.le-systeme-solaire.net/rest.php/bodies/\(planetOrMoon)")!
         
         let (data, response) = try await URLSession.shared.data(from: url)
