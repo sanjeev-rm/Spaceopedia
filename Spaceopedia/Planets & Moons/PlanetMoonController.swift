@@ -9,10 +9,12 @@ import Foundation
 
 class PlanetMoonController
 {
+    /// Error representing an error related to Planet & Moon module.
     enum PlanetMoonError: Error {
         case notFound
     }
     
+    /// Fetches the PlanetMoon response from the API.
     func fetch(planetOrMoon: String) async throws -> PlanetMoon {
         var url = URL(string: "https://api.le-systeme-solaire.net/rest.php/bodies/\(planetOrMoon)")!
         
