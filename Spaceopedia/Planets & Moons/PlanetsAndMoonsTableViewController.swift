@@ -29,10 +29,13 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     @IBOutlet weak var discoveryDateLabel: UILabel!
     
     @IBOutlet weak var revolvesAroundLabel: UILabel!
+    @IBOutlet weak var lookUpPlanetLabel: UILabel!
     
     @IBOutlet weak var errorTextView: UITextView!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var planetMoon: PlanetMoon?
     
     var nothingState = true {
         didSet {
@@ -70,6 +73,14 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     }
     
     var errorState = false {
+        didSet {
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
+    
+    /// Variable to keep track of whether the LookUp "planet" section is visible or not.
+    var lookUpPlanetVisible = false {
         didSet {
             tableView.beginUpdates()
             tableView.endUpdates()
@@ -142,7 +153,9 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
         errorTextView.text = error
     }
     
+    /// Updates the UI with the given PlanetMoon instance.
     func updateUIWithPlanetMoon(planetMoon: PlanetMoon) {
+        resetCertainValues()
         nameLabel.text = planetMoon.name
         englishNameLabel.text = planetMoon.englishName
         typeLabel.text = planetMoon.bodyType
@@ -150,15 +163,22 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
         volumeLabel.text = planetMoon.vol.getVolumeString()
         densityLabel.text = planetMoon.density.description
         gravityLabel.text = planetMoon.gravity.description
-        avgTempLabel.text = planetMoon.avgTemp.description + "K"
+        avgTempLabel.text = planetMoon.avgTemp.description + " K"
         meanRadiusLabel.text = planetMoon.meanRadius.description
         discoveredByLabel.text = planetMoon.discoveredBy
         discoveryDateLabel.text = planetMoon.discoveryDate
         if planetMoon.bodyType.lowercased() == "moon", let revolvesAround = planetMoon.aroundPlanet?.name {
             revolvesAroundLabel.text = "Revolves around \(revolvesAround)"
+            lookUpPlanetLabel.text = "Look Up \(revolvesAround)"
         }
         
         moreLabel.text = moreDiscloseButton.isDisclosed ? MoreLabelText.less.rawValue : MoreLabelText.more.rawValue
+    }
+    
+    /// This function resets certain values to keep the UI consistent everytime the view updates itself with a new PlanetMoon.
+    func resetCertainValues() {
+        moreDiscloseButton.isDisclosed = false
+        lookUpPlanetVisible = false
     }
     
     override func viewDidLoad() {
@@ -180,6 +200,7 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
                     updateUIForFetchingState()
                     activityIndicator.startAnimating()
                     let planetMoonResponse = try await PlanetMoonController.fetch(planetOrMoon: word)
+                    planetMoon = planetMoonResponse // Setting the views planetMoon property.
                     activityIndicator.stopAnimating()
                     updateUIWithPlanetMoon(planetMoon: planetMoonResponse)
                     switch planetMoonResponse.bodyType.lowercased() {
@@ -200,6 +221,18 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    // Sections -->
+    // 0 - textField
+    // 1 - look up button
+    // 2 - activity indicator
+    // 3 - error text view
+    // 4 - basic info section
+    // 5 - more info disclose button section
+    // 6 - more info section
+    // 7 - moons section
+    // 8 - revolves around "planet" section
+    // 9 - images section
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -208,6 +241,20 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
             moreLabel.text = moreDiscloseButton.isDisclosed ? MoreLabelText.less.rawValue : MoreLabelText.more.rawValue
             tableView.beginUpdates()
             tableView.endUpdates()
+        }
+        
+        // When the Revolves around "planet" row is tapped then the Look Up "planet" row shows up.
+        // And everytime this Revolves around "planet" row is touched the Look Up "planet" row toggles.
+        if indexPath == IndexPath(row: 0, section: 8) {
+            lookUpPlanetVisible.toggle()
+        }
+        
+        if indexPath == IndexPath(row: 1, section: 8) {
+            guard let planetMoon = planetMoon, let revolvesAround = planetMoon.aroundPlanet?.name else { return }
+            // Sets the textField text to the planet.
+            textField.text = revolvesAround
+            // Calls the function that is called when the LookUp button is tapped.
+            lookUpButtonTapped(lookUpButton)
         }
     }
     
@@ -235,6 +282,7 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
             switch indexPath.section {
             case 2, 3, 7: return 0
             case 6: return moreDiscloseButton.isDisclosed ? tableView.estimatedRowHeight : 0
+            case 8: return (indexPath.row == 1 && !lookUpPlanetVisible) ? 0 : tableView.estimatedRowHeight
             default: return tableView.estimatedRowHeight
             }
         } else if starState {
@@ -272,17 +320,17 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
             }
         } else if planetState {
             switch section {
-            case 2, 3, 8: return 0
+            case 2, 3, 6, 8: return 0
             default: return tableView.estimatedSectionHeaderHeight
             }
         } else if moonState {
             switch section {
-            case 2, 3, 7: return 0
+            case 2, 3, 6, 7: return 0
             default: return tableView.estimatedSectionHeaderHeight
             }
         } else if starState {
             switch section {
-            case 2, 3, 7, 8: return 0
+            case 2, 3, 6, 7, 8: return 0
             default: return tableView.estimatedSectionHeaderHeight
             }
         } else if errorState {
@@ -310,17 +358,17 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
             }
         } else if planetState {
             switch section {
-            case 2, 3, 8: return 0
+            case 2, 3, 5, 8: return 0
             default: return tableView.estimatedSectionFooterHeight
             }
         } else if moonState {
             switch section {
-            case 2, 3, 7: return 0
+            case 2, 3, 5, 7: return 0
             default: return tableView.estimatedSectionFooterHeight
             }
         } else if starState {
             switch section {
-            case 2, 3, 7, 8: return 0
+            case 2, 3, 5, 7, 8: return 0
             default: return tableView.estimatedSectionFooterHeight
             }
         } else if errorState {
