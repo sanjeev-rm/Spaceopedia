@@ -76,6 +76,14 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Enum
+    
+    /// The text on the More Label of section(button).
+    enum MoreLabelText: String {
+        case more = "More"
+        case less = "Less"
+    }
+    
     // MARK: - Functions
     
     func updateUIForNothingState() {
@@ -149,6 +157,8 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
         if planetMoon.bodyType.lowercased() == "moon", let revolvesAround = planetMoon.aroundPlanet?.name {
             revolvesAroundLabel.text = "Revolves around \(revolvesAround)"
         }
+        
+        moreLabel.text = moreDiscloseButton.isDisclosed ? MoreLabelText.less.rawValue : MoreLabelText.more.rawValue
     }
     
     override func viewDidLoad() {
@@ -176,6 +186,7 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
                     case "planet": updateUIForPlanetState()
                     case "moon": updateUIForMoonState()
                     case "star": updateUIForStarState()
+                    case "dwarf planet" : updateUIForPlanetState()
                     default: updateUIForErrorState(error: "Woah new type of object!")
                     }
                 } catch {
@@ -188,6 +199,17 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath == IndexPath(row: 0, section: 5) {
+            moreDiscloseButton.toggleIsDisclosed()
+            moreLabel.text = moreDiscloseButton.isDisclosed ? MoreLabelText.less.rawValue : MoreLabelText.more.rawValue
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -206,16 +228,19 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
         } else if planetState {
             switch indexPath.section {
             case 2, 3, 8: return 0
+            case 6: return moreDiscloseButton.isDisclosed ? tableView.estimatedRowHeight : 0
             default: return tableView.estimatedRowHeight
             }
         } else if moonState {
             switch indexPath.section {
             case 2, 3, 7: return 0
+            case 6: return moreDiscloseButton.isDisclosed ? tableView.estimatedRowHeight : 0
             default: return tableView.estimatedRowHeight
             }
         } else if starState {
             switch indexPath.section {
             case 2, 3, 7, 8: return 0
+            case 6: return moreDiscloseButton.isDisclosed ? tableView.estimatedRowHeight : 0
             default: return tableView.estimatedRowHeight
             }
         }else if errorState {
@@ -225,6 +250,86 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
             }
         } else {
             return tableView.estimatedRowHeight
+        }
+    }
+    
+    // MARK: Setting height for each section header and footer in table view.
+    // For this to work as expected set the expected value of header height and footer height in storyboard.
+    // And set the header and footer heoght as 0(minimum 1) in storyboard.
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 || section == 1 {
+            return tableView.estimatedSectionHeaderHeight
+        }
+        
+        if nothingState {
+            return 0
+        } else if fetchingState {
+            if section == 2 {
+                return tableView.estimatedSectionHeaderHeight
+            } else {
+                return 0
+            }
+        } else if planetState {
+            switch section {
+            case 2, 3, 8: return 0
+            default: return tableView.estimatedSectionHeaderHeight
+            }
+        } else if moonState {
+            switch section {
+            case 2, 3, 7: return 0
+            default: return tableView.estimatedSectionHeaderHeight
+            }
+        } else if starState {
+            switch section {
+            case 2, 3, 7, 8: return 0
+            default: return tableView.estimatedSectionHeaderHeight
+            }
+        } else if errorState {
+            switch section {
+            case 3: return tableView.estimatedSectionHeaderHeight
+            default: return 0
+            }
+        } else {
+            return tableView.estimatedSectionHeaderHeight
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 || section == 1 {
+            return tableView.estimatedSectionFooterHeight
+        }
+        
+        if nothingState {
+            return 0
+        } else if fetchingState {
+            if section == 2 {
+                return tableView.estimatedSectionFooterHeight
+            } else {
+                return 0
+            }
+        } else if planetState {
+            switch section {
+            case 2, 3, 8: return 0
+            default: return tableView.estimatedSectionFooterHeight
+            }
+        } else if moonState {
+            switch section {
+            case 2, 3, 7: return 0
+            default: return tableView.estimatedSectionFooterHeight
+            }
+        } else if starState {
+            switch section {
+            case 2, 3, 7, 8: return 0
+            default: return tableView.estimatedSectionFooterHeight
+            }
+        } else if errorState {
+            switch section {
+            case 3: return tableView.estimatedSectionFooterHeight
+            default: return 0
+            }
+        } else {
+            return tableView.estimatedSectionFooterHeight
         }
     }
 }
