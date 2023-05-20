@@ -211,7 +211,7 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
                     default: updateUIForErrorState(error: "Woah new type of object!")
                     }
                 } catch {
-                    updateUIForErrorState(error: "Sorry couldnt find what you were looking for.")
+                    updateUIForErrorState(error: "Sorry couldn't find what you were looking for.")
                 }
             }
         } else {
@@ -236,6 +236,7 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // For more info disclosure section.
         if indexPath == IndexPath(row: 0, section: 5) {
             moreDiscloseButton.toggleIsDisclosed()
             moreLabel.text = moreDiscloseButton.isDisclosed ? MoreLabelText.less.rawValue : MoreLabelText.more.rawValue
@@ -379,5 +380,22 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
         } else {
             return tableView.estimatedSectionFooterHeight
         }
+    }
+    
+    // MARK: - Navigation segue functions.
+    
+    @IBSegueAction func moonsViewSegue(_ coder: NSCoder) -> UITableViewController? {
+        let moonsVC = MoonsTableViewController(coder: coder)
+        moonsVC?.moons = planetMoon?.moons
+        return moonsVC
+    }
+    
+    // MARK: - Unwind Function
+    
+    @IBAction func unwindToPlanetsAndMoonsView(unwindSegue: UIStoryboardSegue) {
+        let moonsVC = unwindSegue.source as! MoonsTableViewController
+        let indexOfSelectedRow = moonsVC.tableView.indexPathForSelectedRow!.row
+        textField.text = moonsVC.moons![indexOfSelectedRow].name
+        lookUpButtonTapped(lookUpButton)
     }
 }
