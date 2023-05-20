@@ -33,6 +33,7 @@
 		C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */; };
 		C7CB22C42A095E0100E5B046 /* SpaceDefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */; };
 		C7CB22E62A0A962500E5B046 /* SourceToImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CB22E52A0A962500E5B046 /* SourceToImageView.swift */; };
+		C7D3BCF22A18AA340031AC87 /* PlanetMoonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3BCF12A18AA340031AC87 /* PlanetMoonAPI.swift */; };
 		C7EE846F2A0805D6005E2818 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EE846E2A0805D6005E2818 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
 		C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceDefTableViewController.swift; sourceTree = "<group>"; };
 		C7CB22E52A0A962500E5B046 /* SourceToImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceToImageView.swift; sourceTree = "<group>"; };
+		C7D3BCF12A18AA340031AC87 /* PlanetMoonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMoonAPI.swift; sourceTree = "<group>"; };
 		C7EE846E2A0805D6005E2818 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		EB10CFF81166B7DB13673373 /* Pods_Spaceopedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spaceopedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32917BD7B4BCD8FC8E07576 /* Pods-Spaceopedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaceopedia.debug.xcconfig"; path = "Target Support Files/Pods-Spaceopedia/Pods-Spaceopedia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		C791B5382A14BBB600A5A1E6 /* Planets & Moons */ = {
 			isa = PBXGroup;
 			children = (
+				C7D3BCF12A18AA340031AC87 /* PlanetMoonAPI.swift */,
 				C791B5392A14BBF200A5A1E6 /* PlanetMoon.swift */,
 				C791B53D2A15519A00A5A1E6 /* PlanetMoonController.swift */,
 				C791B53F2A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift */,
@@ -343,6 +346,7 @@
 				C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */,
 				C73C311B2A0C0A9F00CD9CA1 /* DiscloseButton.swift in Sources */,
 				C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */,
+				C7D3BCF22A18AA340031AC87 /* PlanetMoonAPI.swift in Sources */,
 				C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */,
 				C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */,
 				C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */,

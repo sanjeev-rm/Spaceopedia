@@ -36,6 +36,7 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var planetMoon: PlanetMoon?
+    var planetMoonUrlString: String?
     
     var nothingState = true {
         didSet {
@@ -194,12 +195,13 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     // MARK: - Action functions
 
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
-        if let word = textField.text, !word.isEmpty {
+        
+        if let planetMoonUrlString = planetMoonUrlString{
             Task {
                 do {
                     updateUIForFetchingState()
                     activityIndicator.startAnimating()
-                    let planetMoonResponse = try await PlanetMoonController.fetch(planetOrMoon: word)
+                    let planetMoonResponse = try await PlanetMoonController.fetch(urlString: planetMoonUrlString)
                     planetMoon = planetMoonResponse // Setting the views planetMoon property.
                     activityIndicator.stopAnimating()
                     updateUIWithPlanetMoon(planetMoon: planetMoonResponse)
@@ -217,6 +219,14 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
         } else {
             updateUIForNothingState()
         }
+    }
+    
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        guard let word = textField.text, !word.isEmpty else {
+            planetMoonUrlString = nil
+            return
+        }
+        planetMoonUrlString = PlanetMoonAPI.getRequestURLString(word: word)
     }
     
     // MARK: - Table view data source
@@ -254,6 +264,8 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
             guard let planetMoon = planetMoon, let revolvesAround = planetMoon.aroundPlanet?.name else { return }
             // Sets the textField text to the planet.
             textField.text = revolvesAround
+            // Calling this method to update the planetMoonUrlString.
+            textFieldEditingChanged(textField)
             // Calls the function that is called when the LookUp button is tapped.
             lookUpButtonTapped(lookUpButton)
         }
@@ -395,7 +407,8 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     @IBAction func unwindToPlanetsAndMoonsView(unwindSegue: UIStoryboardSegue) {
         let moonsVC = unwindSegue.source as! MoonsTableViewController
         let indexOfSelectedRow = moonsVC.tableView.indexPathForSelectedRow!.row
-        textField.text = moonsVC.moons![indexOfSelectedRow].name
+        textField.text = moonsVC.moons![indexOfSelectedRow].infoUrlString.split(separator: "/").last?.description
+        textFieldEditingChanged(textField)
         lookUpButtonTapped(lookUpButton)
     }
 }
