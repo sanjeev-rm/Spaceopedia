@@ -62,9 +62,15 @@ class SpaceDefTableViewController: UITableViewController {
         fetchingDefinitionState = false
     }
     
+    /// This function resets certain values to keep the UI consistent everytime the view updates itself with a new Definition.
+    func resetCertainValues() {
+        extendedDiscloseButton.isDisclosed = false
+    }
+    
     // MARK: - Action functions
     
     @IBAction func lookUpButtonTapped(_ sender: UIButton) {
+        resetCertainValues()
         if let word = textField.text, !word.isEmpty {
             Task {
                 do {
