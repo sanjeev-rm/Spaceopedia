@@ -45,18 +45,20 @@ class MoonsTableViewController: UITableViewController {
         return cell
     }
     
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Something I tried, But didn't work.
-//        let selectedMoon = moons![indexPath.row]
-//        lookUpMoon = selectedMoon
-//
-//        let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//        let lookUpAction = UIAlertAction(title: "Look Up \(selectedMoon.name)", style: .default)
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-//        alertVC.addAction(lookUpAction)
-//        alertVC.addAction(cancelAction)
-//        present(alertVC, animated: true)
+        /// Something I tried dismissing the view and looking up the moon, But didn't work.
+        let selectedMoon = moons![indexPath.row]
+        lookUpMoon = selectedMoon
+
+        let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let lookUpAction = UIAlertAction(title: "Look Up \(selectedMoon.name)", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertVC.addAction(lookUpAction)
+        alertVC.addAction(cancelAction)
+        present(alertVC, animated: true)
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
