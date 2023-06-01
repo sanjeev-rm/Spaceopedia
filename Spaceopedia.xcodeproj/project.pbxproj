@@ -13,6 +13,8 @@
 		C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8429DEC29F00B4F2AE /* ApodController.swift */; };
 		C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */; };
 		C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72AFE6E29E9CDC70041A379 /* LikedApodTableViewController.swift */; };
+		C738F0D92A29167D00D75A13 /* SpacePicTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C738F0D82A29167D00D75A13 /* SpacePicTextFieldTableViewCell.swift */; };
+		C738F0DB2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C738F0DA2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift */; };
 		C73C31172A0BFFA100CD9CA1 /* Definition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C31162A0BFFA100CD9CA1 /* Definition.swift */; };
 		C73C31192A0C006500CD9CA1 /* DefinitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C31182A0C006500CD9CA1 /* DefinitionController.swift */; };
 		C73C311B2A0C0A9F00CD9CA1 /* DiscloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73C311A2A0C0A9F00CD9CA1 /* DiscloseButton.swift */; };
@@ -30,6 +32,11 @@
 		C7A0844329D4BC01002DB362 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A0844129D4BC01002DB362 /* Main.storyboard */; };
 		C7A0844529D4BC02002DB362 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A0844429D4BC02002DB362 /* Assets.xcassets */; };
 		C7A0844829D4BC02002DB362 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A0844629D4BC02002DB362 /* LaunchScreen.storyboard */; };
+		C7AAC6BC2A288ADB00FB00B6 /* Pics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AAC6BB2A288ADB00FB00B6 /* Pics.swift */; };
+		C7AAC6BE2A2891CD00FB00B6 /* PicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AAC6BD2A2891CD00FB00B6 /* PicsController.swift */; };
+		C7AAC6C02A2892BE00FB00B6 /* SpacePicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AAC6BF2A2892BE00FB00B6 /* SpacePicAPI.swift */; };
+		C7AAC6C22A28FF6C00FB00B6 /* SpacePicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AAC6C12A28FF6C00FB00B6 /* SpacePicTableViewController.swift */; };
+		C7AAC6C62A29019600FB00B6 /* SpacePicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AAC6C52A29019600FB00B6 /* SpacePicTableViewCell.swift */; };
 		C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */; };
 		C7CB22C42A095E0100E5B046 /* SpaceDefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */; };
 		C7CB22E62A0A962500E5B046 /* SourceToImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CB22E52A0A962500E5B046 /* SourceToImageView.swift */; };
@@ -44,6 +51,8 @@
 		C71B9E8429DEC29F00B4F2AE /* ApodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodController.swift; sourceTree = "<group>"; };
 		C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodTableViewController.swift; sourceTree = "<group>"; };
 		C72AFE6E29E9CDC70041A379 /* LikedApodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedApodTableViewController.swift; sourceTree = "<group>"; };
+		C738F0D82A29167D00D75A13 /* SpacePicTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePicTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		C738F0DA2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePicLookUpTableViewCell.swift; sourceTree = "<group>"; };
 		C73C31162A0BFFA100CD9CA1 /* Definition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Definition.swift; sourceTree = "<group>"; };
 		C73C31182A0C006500CD9CA1 /* DefinitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionController.swift; sourceTree = "<group>"; };
 		C73C311A2A0C0A9F00CD9CA1 /* DiscloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscloseButton.swift; sourceTree = "<group>"; };
@@ -63,6 +72,11 @@
 		C7A0844429D4BC02002DB362 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7A0844729D4BC02002DB362 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7A0844929D4BC02002DB362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7AAC6BB2A288ADB00FB00B6 /* Pics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pics.swift; sourceTree = "<group>"; };
+		C7AAC6BD2A2891CD00FB00B6 /* PicsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsController.swift; sourceTree = "<group>"; };
+		C7AAC6BF2A2892BE00FB00B6 /* SpacePicAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePicAPI.swift; sourceTree = "<group>"; };
+		C7AAC6C12A28FF6C00FB00B6 /* SpacePicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePicTableViewController.swift; sourceTree = "<group>"; };
+		C7AAC6C52A29019600FB00B6 /* SpacePicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePicTableViewCell.swift; sourceTree = "<group>"; };
 		C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
 		C7CB22C32A095E0100E5B046 /* SpaceDefTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceDefTableViewController.swift; sourceTree = "<group>"; };
 		C7CB22E52A0A962500E5B046 /* SourceToImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceToImageView.swift; sourceTree = "<group>"; };
@@ -191,12 +205,27 @@
 				C71B9E8129DEC00C00B4F2AE /* APOD */,
 				C7CB22C22A095DCB00E5B046 /* Space Def */,
 				C791B5382A14BBB600A5A1E6 /* Planets & Moons */,
+				C7AAC6BA2A288A8A00FB00B6 /* Space Pic */,
 				C7A0844129D4BC01002DB362 /* Main.storyboard */,
 				C7A0844429D4BC02002DB362 /* Assets.xcassets */,
 				C7A0844629D4BC02002DB362 /* LaunchScreen.storyboard */,
 				C7A0844929D4BC02002DB362 /* Info.plist */,
 			);
 			path = Spaceopedia;
+			sourceTree = "<group>";
+		};
+		C7AAC6BA2A288A8A00FB00B6 /* Space Pic */ = {
+			isa = PBXGroup;
+			children = (
+				C7AAC6BF2A2892BE00FB00B6 /* SpacePicAPI.swift */,
+				C7AAC6BB2A288ADB00FB00B6 /* Pics.swift */,
+				C7AAC6BD2A2891CD00FB00B6 /* PicsController.swift */,
+				C7AAC6C12A28FF6C00FB00B6 /* SpacePicTableViewController.swift */,
+				C7AAC6C52A29019600FB00B6 /* SpacePicTableViewCell.swift */,
+				C738F0D82A29167D00D75A13 /* SpacePicTextFieldTableViewCell.swift */,
+				C738F0DA2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift */,
+			);
+			path = "Space Pic";
 			sourceTree = "<group>";
 		};
 		C7CB22C22A095DCB00E5B046 /* Space Def */ = {
@@ -335,15 +364,21 @@
 			files = (
 				C73C31192A0C006500CD9CA1 /* DefinitionController.swift in Sources */,
 				C793A4CA29D54C500071B566 /* Modules.swift in Sources */,
+				C738F0DB2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift in Sources */,
 				C791B53A2A14BBF200A5A1E6 /* PlanetMoon.swift in Sources */,
+				C738F0D92A29167D00D75A13 /* SpacePicTextFieldTableViewCell.swift in Sources */,
 				C7CB22C42A095E0100E5B046 /* SpaceDefTableViewController.swift in Sources */,
+				C7AAC6C02A2892BE00FB00B6 /* SpacePicAPI.swift in Sources */,
 				C7690C9329E173B1009B50EC /* LikedTableViewCell.swift in Sources */,
 				C791B5432A1742C000A5A1E6 /* MoonsTableViewController.swift in Sources */,
 				C7690C8F29E16D83009B50EC /* LikeButton.swift in Sources */,
 				C791B53E2A15519A00A5A1E6 /* PlanetMoonController.swift in Sources */,
+				C7AAC6C62A29019600FB00B6 /* SpacePicTableViewCell.swift in Sources */,
 				C7CB22E62A0A962500E5B046 /* SourceToImageView.swift in Sources */,
 				C7A0843C29D4BC01002DB362 /* AppDelegate.swift in Sources */,
+				C7AAC6BE2A2891CD00FB00B6 /* PicsController.swift in Sources */,
 				C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */,
+				C7AAC6C22A28FF6C00FB00B6 /* SpacePicTableViewController.swift in Sources */,
 				C73C311B2A0C0A9F00CD9CA1 /* DiscloseButton.swift in Sources */,
 				C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */,
 				C7D3BCF22A18AA340031AC87 /* PlanetMoonAPI.swift in Sources */,
@@ -351,6 +386,7 @@
 				C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */,
 				C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */,
 				C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */,
+				C7AAC6BC2A288ADB00FB00B6 /* Pics.swift in Sources */,
 				C7EE846F2A0805D6005E2818 /* ImageViewController.swift in Sources */,
 				C73C31172A0BFFA100CD9CA1 /* Definition.swift in Sources */,
 				C791B5402A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift in Sources */,

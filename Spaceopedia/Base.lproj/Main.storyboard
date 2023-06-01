@@ -286,124 +286,128 @@
         <!--SPACE PIC-->
         <scene sceneID="wbd-oq-A66">
             <objects>
-                <tableViewController id="Bpk-KW-SOy" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8Xx-9Q-ahu">
+                <tableViewController id="Bpk-KW-SOy" customClass="SpacePicTableViewController" customModule="Spaceopedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="8Xx-9Q-ahu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <sections>
-                            <tableViewSection id="L96-e8-utq">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="49" id="XD5-OC-DFj">
-                                        <rect key="frame" x="20" y="17.5" width="374" height="49"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XD5-OC-DFj" id="BJO-rF-tmm">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yim-NJ-qbD">
-                                                    <rect key="frame" x="20" y="3" width="334" height="43"/>
-                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="16"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                            </subviews>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spacePicTextFieldCell" rowHeight="49" id="XD5-OC-DFj" customClass="SpacePicTextFieldTableViewCell" customModule="Spaceopedia" customModuleProvider="target">
+                                <rect key="frame" x="20" y="38" width="374" height="49"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XD5-OC-DFj" id="BJO-rF-tmm">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yim-NJ-qbD">
+                                            <rect key="frame" x="20" y="3" width="334" height="43"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="yim-NJ-qbD" secondAttribute="bottom" constant="3" id="7he-uL-qlo"/>
+                                        <constraint firstItem="yim-NJ-qbD" firstAttribute="leading" secondItem="BJO-rF-tmm" secondAttribute="leading" constant="20" symbolic="YES" id="HDQ-kt-K17"/>
+                                        <constraint firstItem="yim-NJ-qbD" firstAttribute="centerY" secondItem="BJO-rF-tmm" secondAttribute="centerY" id="gCV-8P-sZG"/>
+                                        <constraint firstItem="yim-NJ-qbD" firstAttribute="top" secondItem="BJO-rF-tmm" secondAttribute="top" constant="3" id="mjS-F3-jdt"/>
+                                        <constraint firstItem="yim-NJ-qbD" firstAttribute="centerX" secondItem="BJO-rF-tmm" secondAttribute="centerX" id="n5S-gz-ni5"/>
+                                        <constraint firstAttribute="trailing" secondItem="yim-NJ-qbD" secondAttribute="trailing" constant="20" symbolic="YES" id="xGe-rb-Qn8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <connections>
+                                    <outlet property="textField" destination="yim-NJ-qbD" id="wAl-w7-zDk"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spacePicLookUpButtonCell" rowHeight="49" id="pdn-RN-SDR" customClass="SpacePicLookUpTableViewCell" customModule="Spaceopedia" customModuleProvider="target">
+                                <rect key="frame" x="20" y="87" width="374" height="49"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pdn-RN-SDR" id="4mi-cQ-1sX">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14m-bf-Qek">
+                                            <rect key="frame" x="143" y="7" width="88" height="35"/>
+                                            <color key="tintColor" name="ButtonColor1"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Look Up" cornerStyle="capsule" titleAlignment="center">
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="lookUpButton:" destination="Flw-tA-Fxe" eventType="touchUpInside" id="cCw-uS-uDZ"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="14m-bf-Qek" firstAttribute="centerY" secondItem="4mi-cQ-1sX" secondAttribute="centerY" id="cdM-qe-q5M"/>
+                                        <constraint firstItem="14m-bf-Qek" firstAttribute="centerX" secondItem="4mi-cQ-1sX" secondAttribute="centerX" id="tlA-FR-qrk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <connections>
+                                    <outlet property="lookUpButton" destination="14m-bf-Qek" id="Jex-nA-o2z"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spacePicCell" rowHeight="175" id="3Ps-6d-Ju6" customClass="SpacePicTableViewCell" customModule="Spaceopedia" customModuleProvider="target">
+                                <rect key="frame" x="20" y="136" width="374" height="175"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ps-6d-Ju6" id="nQB-Q3-1MT">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="175"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleImage1" translatesAutoresizingMaskIntoConstraints="NO" id="Wtz-IS-7xc">
+                                            <rect key="frame" x="20" y="0.0" width="130" height="175"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="yim-NJ-qbD" secondAttribute="bottom" constant="3" id="7he-uL-qlo"/>
-                                                <constraint firstItem="yim-NJ-qbD" firstAttribute="leading" secondItem="BJO-rF-tmm" secondAttribute="leading" constant="20" symbolic="YES" id="HDQ-kt-K17"/>
-                                                <constraint firstItem="yim-NJ-qbD" firstAttribute="centerY" secondItem="BJO-rF-tmm" secondAttribute="centerY" id="gCV-8P-sZG"/>
-                                                <constraint firstItem="yim-NJ-qbD" firstAttribute="top" secondItem="BJO-rF-tmm" secondAttribute="top" constant="3" id="mjS-F3-jdt"/>
-                                                <constraint firstItem="yim-NJ-qbD" firstAttribute="centerX" secondItem="BJO-rF-tmm" secondAttribute="centerX" id="n5S-gz-ni5"/>
-                                                <constraint firstAttribute="trailing" secondItem="yim-NJ-qbD" secondAttribute="trailing" constant="20" symbolic="YES" id="xGe-rb-Qn8"/>
+                                                <constraint firstAttribute="width" constant="130" id="dEl-1n-KpF"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="BackgroundColor"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="JEE-ZY-vEL">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="49" id="vYn-Lb-BfN">
-                                        <rect key="frame" x="20" y="101.5" width="374" height="49"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vYn-Lb-BfN" id="nwz-3R-WaG">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udA-dh-rSA">
-                                                    <rect key="frame" x="143.5" y="7.5" width="87" height="34"/>
-                                                    <color key="tintColor" name="ButtonColor1"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="filled" title="Look Up" cornerStyle="capsule" titleAlignment="center">
-                                                        <fontDescription key="titleFontDescription" type="system" pointSize="17"/>
-                                                    </buttonConfiguration>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="udA-dh-rSA" firstAttribute="centerX" secondItem="nwz-3R-WaG" secondAttribute="centerX" id="hN3-L4-9cF"/>
-                                                <constraint firstItem="udA-dh-rSA" firstAttribute="centerY" secondItem="nwz-3R-WaG" secondAttribute="centerY" id="qkH-u8-Zsa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="BackgroundColor"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="eJI-r5-XBh">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="175" id="Rl6-Er-My7">
-                                        <rect key="frame" x="20" y="185.5" width="374" height="175"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rl6-Er-My7" id="woW-Fx-9YX">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="175"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SampleImage1" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-bG-D8I">
-                                                    <rect key="frame" x="20" y="0.0" width="130" height="175"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="130" id="4ea-Sc-APc"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="16"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moons over the rome structure by nasa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wr-Ov-gGM">
-                                                    <rect key="frame" x="158" y="11" width="196" height="79"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omh-1a-TKz">
-                                                    <rect key="frame" x="158" y="97.5" width="196" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="tpv-bG-D8I" secondAttribute="bottom" id="0N3-nd-nb6"/>
-                                                <constraint firstItem="tpv-bG-D8I" firstAttribute="leading" secondItem="woW-Fx-9YX" secondAttribute="leading" constant="20" symbolic="YES" id="6vB-0D-7V6"/>
-                                                <constraint firstItem="5Wr-Ov-gGM" firstAttribute="top" secondItem="woW-Fx-9YX" secondAttribute="topMargin" id="GVY-1P-fBx"/>
-                                                <constraint firstItem="omh-1a-TKz" firstAttribute="top" secondItem="5Wr-Ov-gGM" secondAttribute="bottom" constant="7.5" id="HuJ-fB-7do"/>
-                                                <constraint firstItem="omh-1a-TKz" firstAttribute="leading" secondItem="tpv-bG-D8I" secondAttribute="trailing" constant="8" symbolic="YES" id="IOZ-Vd-Jbx"/>
-                                                <constraint firstItem="tpv-bG-D8I" firstAttribute="top" secondItem="woW-Fx-9YX" secondAttribute="top" id="QIO-VZ-H75"/>
-                                                <constraint firstItem="5Wr-Ov-gGM" firstAttribute="trailing" secondItem="woW-Fx-9YX" secondAttribute="trailingMargin" id="UbQ-g4-Rps"/>
-                                                <constraint firstItem="omh-1a-TKz" firstAttribute="trailing" secondItem="woW-Fx-9YX" secondAttribute="trailingMargin" id="be2-d6-vDJ"/>
-                                                <constraint firstItem="5Wr-Ov-gGM" firstAttribute="leading" secondItem="tpv-bG-D8I" secondAttribute="trailing" constant="8" symbolic="YES" id="n65-ax-OPZ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="BackgroundColor"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moons over the rome structure by nasa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW4-jA-dra">
+                                            <rect key="frame" x="158" y="11" width="196" height="79"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w8-rx-ch6">
+                                            <rect key="frame" x="158" y="97.5" width="196" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8w8-rx-ch6" firstAttribute="trailing" secondItem="nQB-Q3-1MT" secondAttribute="trailingMargin" id="1Lf-g9-yhM"/>
+                                        <constraint firstItem="Wtz-IS-7xc" firstAttribute="leading" secondItem="nQB-Q3-1MT" secondAttribute="leading" constant="20" symbolic="YES" id="3X6-wx-WkC"/>
+                                        <constraint firstItem="uW4-jA-dra" firstAttribute="trailing" secondItem="nQB-Q3-1MT" secondAttribute="trailingMargin" id="5AW-zJ-agt"/>
+                                        <constraint firstAttribute="bottom" secondItem="Wtz-IS-7xc" secondAttribute="bottom" id="IyZ-Hd-5tg"/>
+                                        <constraint firstItem="8w8-rx-ch6" firstAttribute="top" secondItem="uW4-jA-dra" secondAttribute="bottom" constant="7.5" id="LI8-C3-Idr"/>
+                                        <constraint firstItem="uW4-jA-dra" firstAttribute="top" secondItem="nQB-Q3-1MT" secondAttribute="topMargin" id="R7c-fF-hMu"/>
+                                        <constraint firstItem="uW4-jA-dra" firstAttribute="leading" secondItem="Wtz-IS-7xc" secondAttribute="trailing" constant="8" symbolic="YES" id="ruj-8O-x7m"/>
+                                        <constraint firstItem="Wtz-IS-7xc" firstAttribute="top" secondItem="nQB-Q3-1MT" secondAttribute="top" id="uNE-57-4Zx"/>
+                                        <constraint firstItem="8w8-rx-ch6" firstAttribute="leading" secondItem="Wtz-IS-7xc" secondAttribute="trailing" constant="8" symbolic="YES" id="ut4-OH-gsZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <connections>
+                                    <outlet property="spacePicCopyrightLabel" destination="8w8-rx-ch6" id="R42-b5-w0a"/>
+                                    <outlet property="spacePicDescriptionLabel" destination="uW4-jA-dra" id="xLP-C0-axe"/>
+                                    <outlet property="spacePicImageView" destination="Wtz-IS-7xc" id="vYu-NU-Te2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Bpk-KW-SOy" id="lEd-W5-U0t"/>
                             <outlet property="delegate" destination="Bpk-KW-SOy" id="otd-9a-pKN"/>
@@ -412,6 +416,7 @@
                     <navigationItem key="navigationItem" title="SPACE PIC" id="Wdz-0m-xwK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYd-rG-2bm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Flw-tA-Fxe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3779.7101449275365" y="476.78571428571428"/>
         </scene>
