@@ -400,9 +400,16 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
     @IBSegueAction func moonsViewSegue(_ coder: NSCoder) -> UITableViewController? {
         let moonsVC = MoonsTableViewController(coder: coder)
         moonsVC?.moons = planetMoon?.moons
+        moonsVC?.navigationItem.title = "\(planetMoon?.englishName ?? "")'s Moons"
         return moonsVC
     }
     
+    @IBSegueAction func imagesViewSegue(_ coder: NSCoder) -> UITableViewController? {
+        let imagesVC = ImagesTableViewController(coder: coder)
+        imagesVC?.planetMoon = planetMoon
+        imagesVC?.navigationItem.title = "\(planetMoon?.englishName ?? "")"
+        return imagesVC
+    }
     // MARK: - Unwind Function
     
     @IBAction func unwindToPlanetsAndMoonsView(unwindSegue: UIStoryboardSegue) {
