@@ -68,3 +68,16 @@ struct Planet: Codable {
         case infoUrlString = "rel"
     }
 }
+
+
+
+/// PlanetMoon bodyType.
+/// Represents the body type property of the response from the API.
+/// The raw value of these are in lowercase.
+enum PlanetMoonBodyType: String {
+    case planet = "planet"
+    case moon = "moon"
+    case star = "star"
+    case dwarfPlanet = "dwarf planet"
+    case asteroid = "asteroid"
+}

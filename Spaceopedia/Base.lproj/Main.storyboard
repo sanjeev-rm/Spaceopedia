@@ -66,7 +66,7 @@
                             <outlet property="delegate" destination="v6R-PR-0q4" id="p6I-wb-gdn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SPACEOPEDIA" id="7o4-ug-HGl">
+                    <navigationItem key="navigationItem" title="SPACEOPEDIA" largeTitleDisplayMode="always" id="7o4-ug-HGl">
                         <barButtonItem key="backBarButtonItem" title=" " id="290-hb-hqV"/>
                     </navigationItem>
                     <connections>
@@ -186,7 +186,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Q-6f-BvT">
                                                     <rect key="frame" x="20" y="11" width="334" height="103"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <color key="textColor" name="TitleColor2"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -216,7 +216,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZU-rZ-w1P">
                                                     <rect key="frame" x="20" y="14" width="72" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yV-Q1-B3Q" customClass="DiscloseButton" customModule="Spaceopedia" customModuleProvider="target">
@@ -246,7 +245,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MWa-Il-XTJ">
                                                     <rect key="frame" x="20" y="11" width="334" height="221"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <color key="textColor" name="TitleColor2"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -337,7 +336,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udA-dh-rSA">
-                                                    <rect key="frame" x="143.5" y="7.5" width="87.5" height="34.5"/>
+                                                    <rect key="frame" x="143.5" y="7.5" width="87" height="34"/>
                                                     <color key="tintColor" name="ButtonColor1"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Look Up" cornerStyle="capsule" titleAlignment="center">
@@ -459,7 +458,7 @@
         <scene sceneID="eHv-Hx-gPf">
             <objects>
                 <tableViewController id="nkg-Uj-HXV" customClass="PlanetsAndMoonsTableViewController" customModule="Spaceopedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="18" sectionFooterHeight="1" estimatedSectionFooterHeight="18" id="6RD-2U-mgP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="18" sectionFooterHeight="1" estimatedSectionFooterHeight="18" id="6RD-2U-mgP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
@@ -586,7 +585,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIh-sE-Eea">
                                                     <rect key="frame" x="20" y="14" width="334" height="21"/>
                                                     <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="TitleColor2"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -618,7 +617,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOw-np-fea">
                                                             <rect key="frame" x="55.5" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -652,7 +651,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s0-gw-yaP">
                                                             <rect key="frame" x="119" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -731,7 +730,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNz-Ru-0Mi">
                                                             <rect key="frame" x="51" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -766,7 +765,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJD-BI-qtl">
                                                             <rect key="frame" x="69" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -801,7 +800,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVH-Kz-N9B">
                                                             <rect key="frame" x="70.5" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -836,7 +835,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sI-TZ-nJ7">
                                                             <rect key="frame" x="67" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -870,7 +869,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-K3-TI5">
                                                             <rect key="frame" x="88" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -904,7 +903,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2S-yj-urj">
                                                             <rect key="frame" x="112" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -939,7 +938,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-YC-04p">
                                                             <rect key="frame" x="124.5" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -974,7 +973,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxq-SV-KkE">
                                                             <rect key="frame" x="131" y="0.0" width="34" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" name="TitleColor2"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -1693,7 +1692,7 @@
                                             <rect key="frame" x="20" y="0.0" width="302" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="TitleColor2"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1751,9 +1750,6 @@
         <namedColor name="heartBlue">
             <color red="0.38039215686274508" green="0.44313725490196076" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="quaternaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17647058823529413" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

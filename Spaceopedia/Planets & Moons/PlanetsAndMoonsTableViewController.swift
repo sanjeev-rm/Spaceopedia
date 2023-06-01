@@ -206,10 +206,11 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
                     activityIndicator.stopAnimating()
                     updateUIWithPlanetMoon(planetMoon: planetMoonResponse)
                     switch planetMoonResponse.bodyType.lowercased() {
-                    case "planet": updateUIForPlanetState()
-                    case "moon": updateUIForMoonState()
-                    case "star": updateUIForStarState()
-                    case "dwarf planet" : updateUIForPlanetState()
+                    case PlanetMoonBodyType.planet.rawValue : updateUIForPlanetState()
+                    case PlanetMoonBodyType.moon.rawValue : updateUIForMoonState()
+                    case PlanetMoonBodyType.star.rawValue : updateUIForStarState()
+                    case PlanetMoonBodyType.dwarfPlanet.rawValue : updateUIForPlanetState()
+                    case PlanetMoonBodyType.asteroid.rawValue : updateUIForStarState()
                     default: updateUIForErrorState(error: "Woah new type of object!")
                     }
                 } catch {
