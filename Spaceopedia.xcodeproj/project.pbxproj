@@ -234,10 +234,7 @@
 				C7AAC6BF2A2892BE00FB00B6 /* SpacePicAPI.swift */,
 				C7AAC6BB2A288ADB00FB00B6 /* Pics.swift */,
 				C7AAC6BD2A2891CD00FB00B6 /* PicsController.swift */,
-				C7AAC6C12A28FF6C00FB00B6 /* SpacePicTableViewController.swift */,
-				C7AAC6C52A29019600FB00B6 /* SpacePicTableViewCell.swift */,
-				C738F0D82A29167D00D75A13 /* SpacePicTextFieldTableViewCell.swift */,
-				C738F0DA2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift */,
+				C7E034742A2CF983006CD7C7 /* Testing */,
 			);
 			path = "Space Pic";
 			sourceTree = "<group>";
@@ -259,6 +256,17 @@
 				C7EE846E2A0805D6005E2818 /* ImageViewController.swift */,
 			);
 			path = "Image View Controller";
+			sourceTree = "<group>";
+		};
+		C7E034742A2CF983006CD7C7 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				C7AAC6C12A28FF6C00FB00B6 /* SpacePicTableViewController.swift */,
+				C7AAC6C52A29019600FB00B6 /* SpacePicTableViewCell.swift */,
+				C738F0D82A29167D00D75A13 /* SpacePicTextFieldTableViewCell.swift */,
+				C738F0DA2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift */,
+			);
+			path = Testing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

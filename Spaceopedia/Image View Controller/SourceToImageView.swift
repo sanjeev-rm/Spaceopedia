@@ -10,4 +10,5 @@ import Foundation
 enum SourceToImageView {
     case apodView
     case likedApodView
+    case planetsAndMoonsImagesView
 }
