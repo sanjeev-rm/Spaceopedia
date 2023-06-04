@@ -16,3 +16,6 @@ New Module not in the original plan
 - Only contains the NASA APOD functionality.
 - Can save your favourite APODs.
 - Can share APODs.
+
+#### Version 1.1
+- Has SpaceDef module too.
