@@ -19,7 +19,7 @@ class ApodController
     /// Function that fetches apod information from the NASA APOD API.
     static func fetchApodInfo(query: [String:String]) async throws -> Apod
     {
-        var urlComponents = URLComponents(string: "https://api.nasa.gov/planetary/apod")!
+        var urlComponents = URLComponents(string: ApodAPI.getRequestUrl())!
         urlComponents.queryItems = query.map({ key, value in
             URLQueryItem(name: key, value: value)
         })
@@ -50,10 +50,6 @@ class ApodController
         }
         
         return image
-    }
-    
-    static func fetchApodVideo(videoUrl: URL)
-    {
     }
 }
 

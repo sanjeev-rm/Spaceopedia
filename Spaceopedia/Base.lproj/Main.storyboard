@@ -443,21 +443,124 @@
         <!--SPACE NEWS-->
         <scene sceneID="VI7-uC-aGY">
             <objects>
-                <tableViewController id="ris-Ay-n7w" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="fxW-V0-WET">
+                <tableViewController id="ris-Ay-n7w" customClass="SpaceNewsTableViewController" customModule="Spaceopedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="fxW-V0-WET">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spaceNewsArticleCell" rowHeight="362" id="FJa-3W-6es" customClass="SpaceNewsArticleTableViewCell" customModule="Spaceopedia" customModuleProvider="target">
+                                <rect key="frame" x="20" y="38" width="374" height="362"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FJa-3W-6es" id="3io-nr-hRd">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="362"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XZk-Jg-Xal">
+                                            <rect key="frame" x="20" y="16" width="334" height="330"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sparkles" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dfL-GO-AhV">
+                                                    <rect key="frame" x="0.0" y="-1" width="334" height="201"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                    <color key="tintColor" red="0.13686102759999999" green="0.13887518099999999" blue="0.15493711830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="LZu-Qh-FeS"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="16"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using gravitational lensing to measure mass of a quasar's galaxy with precision" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-KE-NGI">
+                                                    <rect key="frame" x="0.0" y="208" width="334" height="61"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="61" id="aXr-Kd-JO2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                                    <color key="textColor" name="TitleColor1"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="© Copyright" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3K-HN-k29">
+                                                    <rect key="frame" x="0.0" y="277" width="334" height="53"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dfL-GO-AhV" secondAttribute="trailing" id="bSx-CB-a8o"/>
+                                                <constraint firstItem="dfL-GO-AhV" firstAttribute="leading" secondItem="XZk-Jg-Xal" secondAttribute="leading" id="kgM-Bh-KeE"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XZk-Jg-Xal" firstAttribute="top" secondItem="3io-nr-hRd" secondAttribute="top" constant="16" id="6Dm-qp-ptd"/>
+                                        <constraint firstItem="XZk-Jg-Xal" firstAttribute="leading" secondItem="3io-nr-hRd" secondAttribute="leading" constant="20" symbolic="YES" id="PcY-GZ-kGz"/>
+                                        <constraint firstAttribute="trailing" secondItem="XZk-Jg-Xal" secondAttribute="trailing" constant="20" symbolic="YES" id="Z14-TS-nfm"/>
+                                        <constraint firstAttribute="bottom" secondItem="XZk-Jg-Xal" secondAttribute="bottom" constant="16" id="nYk-6H-eOc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="Color"/>
+                                <connections>
+                                    <outlet property="articleImageView" destination="dfL-GO-AhV" id="gnW-GV-ob8"/>
+                                    <outlet property="copyrightLabel" destination="V3K-HN-k29" id="Xei-tJ-1A7"/>
+                                    <outlet property="titleLabel" destination="LBm-KE-NGI" id="2uK-DB-gHD"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spaceNewsFetchingCell" textLabel="ZfC-WU-mjO" rowHeight="100" style="IBUITableViewCellStyleDefault" id="mfn-9B-Wdn" customClass="SpaceNewsArticleTableViewCell" customModule="Spaceopedia" customModuleProvider="target">
+                                <rect key="frame" x="20" y="400" width="374" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mfn-9B-Wdn" id="deb-4H-vdm">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Fetching..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZfC-WU-mjO">
+                                            <rect key="frame" x="20" y="0.0" width="334" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="27"/>
+                                            <color key="textColor" name="TitleColor1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spaceNewsErrorCell" textLabel="kNQ-NJ-T26" rowHeight="100" style="IBUITableViewCellStyleDefault" id="JCc-0Y-o5A" customClass="SpaceNewsArticleTableViewCell" customModule="Spaceopedia" customModuleProvider="target">
+                                <rect key="frame" x="20" y="500" width="374" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JCc-0Y-o5A" id="9mc-b8-np6">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kNQ-NJ-T26">
+                                            <rect key="frame" x="20" y="0.0" width="334" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="27"/>
+                                            <color key="textColor" name="TitleColor1"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="ris-Ay-n7w" id="GlE-AR-MWR"/>
                             <outlet property="delegate" destination="ris-Ay-n7w" id="U2Q-Ve-q0i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SPACE NEWS" id="1yB-29-XvD"/>
+                    <navigationItem key="navigationItem" title="SPACE NEWS" id="1yB-29-XvD">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="as1-ah-TY4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sortByPopUpMenuButton" destination="as1-ah-TY4" id="Sdp-mi-9yM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPT-7Q-7Qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3770" y="2702"/>
+            <point key="canvasLocation" x="3779.7101449275365" y="3109.8214285714284"/>
         </scene>
         <!--Planets & Moons-->
         <scene sceneID="eHv-Hx-gPf">
@@ -1144,13 +1247,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="77.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APOD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umk-o8-UVa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="95.5" height="77.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="77.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                             <color key="textColor" name="TitleColor1"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-2b-axU">
-                                                            <rect key="frame" x="207.5" y="0.0" width="166.5" height="77.5"/>
+                                                            <rect key="frame" x="197" y="0.0" width="177" height="77.5"/>
                                                             <date key="minimumDate" timeIntervalSinceReferenceDate="-175066200">
                                                                 <!--1995-06-15 18:30:00 +0000-->
                                                             </date>
@@ -1175,7 +1278,7 @@
                             <tableViewSection id="pwD-pa-vpj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="776" id="Bx7-uB-mwB">
-                                        <rect key="frame" x="20" y="132" width="374" height="776"/>
+                                        <rect key="frame" x="20" y="131.5" width="374" height="776"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bx7-uB-mwB" id="ECH-es-kRj">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="776"/>
@@ -1629,13 +1732,13 @@
                                                             <rect key="frame" x="0.0" y="696" width="374" height="27"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-m2-b2n">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="27"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgU-bX-nD0">
-                                                                    <rect key="frame" x="326" y="0.0" width="48" height="27"/>
+                                                                    <rect key="frame" x="329" y="0.0" width="45" height="27"/>
                                                                     <state key="normal" title="Button"/>
                                                                     <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system"/>
                                                                     <connections>
@@ -1776,7 +1879,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moons over the rome structure by nasa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFr-cS-Fcw">
                                             <rect key="frame" x="158" y="11" width="196" height="79"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="TitleColor1"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Copyright" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxt-Ca-U2y">
@@ -1817,7 +1920,7 @@
                                             <rect key="frame" x="20" y="0.0" width="334" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="TitleColor1"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1835,7 +1938,7 @@
                                             <rect key="frame" x="20" y="0.0" width="334" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="TitleColor1"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1881,6 +1984,9 @@
         </namedColor>
         <namedColor name="ButtonColor1">
             <color red="0.23137254901960785" green="0.24705882352941178" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TitleColor1">
             <color red="0.11764705882352941" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

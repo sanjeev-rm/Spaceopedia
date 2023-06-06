@@ -29,18 +29,6 @@ class ImagesTableViewController: UITableViewController {
         }
     }
     
-    func updateUIForImagesState() {
-        vcState = .fetched
-    }
-    
-    func updateUIForFetchingState() {
-        vcState = .fetching
-    }
-    
-    func updateUIForErrorState() {
-        vcState = .error
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +43,20 @@ class ImagesTableViewController: UITableViewController {
                 updateUIForErrorState()
             }
         }
+    }
+    
+    // MARK: - update UI functions
+    
+    func updateUIForImagesState() {
+        vcState = .fetched
+    }
+    
+    func updateUIForFetchingState() {
+        vcState = .fetching
+    }
+    
+    func updateUIForErrorState() {
+        vcState = .error
     }
 
     // MARK: - Table view data source

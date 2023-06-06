@@ -227,7 +227,8 @@ class PlanetsAndMoonsTableViewController: UITableViewController {
             planetMoonUrlString = nil
             return
         }
-        planetMoonUrlString = PlanetMoonAPI.getRequestURLString(word: word)
+        // Setting the planetMoon to search
+        planetMoonUrlString = PlanetMoonAPI.getRequestUrlWith(word: word)
     }
     
     // MARK: - Table view data source

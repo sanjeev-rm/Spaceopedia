@@ -23,6 +23,12 @@
 		C7690C8F29E16D83009B50EC /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7690C8E29E16D83009B50EC /* LikeButton.swift */; };
 		C7690C9329E173B1009B50EC /* LikedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7690C9229E173B1009B50EC /* LikedTableViewCell.swift */; };
 		C7690C9529E173D4009B50EC /* LikedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7690C9429E173D4009B50EC /* LikedTableViewController.swift */; };
+		C77346542A2F7C5200223AE6 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346532A2F7C5200223AE6 /* NewsModel.swift */; };
+		C77346562A2F84DE00223AE6 /* ApodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346552A2F84DE00223AE6 /* ApodAPI.swift */; };
+		C77346582A2F8A8700223AE6 /* SpaceNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346572A2F8A8700223AE6 /* SpaceNewsTableViewController.swift */; };
+		C773465A2A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346592A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift */; };
+		C773465C2A2F8F9E00223AE6 /* SpaceNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773465B2A2F8F9E00223AE6 /* SpaceNewsController.swift */; };
+		C773465E2A2F902300223AE6 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773465D2A2F902300223AE6 /* NewsAPI.swift */; };
 		C791B53A2A14BBF200A5A1E6 /* PlanetMoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B5392A14BBF200A5A1E6 /* PlanetMoon.swift */; };
 		C791B53E2A15519A00A5A1E6 /* PlanetMoonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B53D2A15519A00A5A1E6 /* PlanetMoonController.swift */; };
 		C791B5402A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B53F2A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift */; };
@@ -63,6 +69,12 @@
 		C7690C8E29E16D83009B50EC /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		C7690C9229E173B1009B50EC /* LikedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTableViewCell.swift; sourceTree = "<group>"; };
 		C7690C9429E173D4009B50EC /* LikedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTableViewController.swift; sourceTree = "<group>"; };
+		C77346532A2F7C5200223AE6 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		C77346552A2F84DE00223AE6 /* ApodAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodAPI.swift; sourceTree = "<group>"; };
+		C77346572A2F8A8700223AE6 /* SpaceNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceNewsTableViewController.swift; sourceTree = "<group>"; };
+		C77346592A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceNewsArticleTableViewCell.swift; sourceTree = "<group>"; };
+		C773465B2A2F8F9E00223AE6 /* SpaceNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceNewsController.swift; sourceTree = "<group>"; };
+		C773465D2A2F902300223AE6 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		C791B5392A14BBF200A5A1E6 /* PlanetMoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMoon.swift; sourceTree = "<group>"; };
 		C791B53D2A15519A00A5A1E6 /* PlanetMoonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMoonController.swift; sourceTree = "<group>"; };
 		C791B53F2A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsAndMoonsTableViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +134,7 @@
 		C71B9E8129DEC00C00B4F2AE /* APOD */ = {
 			isa = PBXGroup;
 			children = (
+				C77346552A2F84DE00223AE6 /* ApodAPI.swift */,
 				C71B9E8229DEC07800B4F2AE /* ApodModel.swift */,
 				C71B9E8429DEC29F00B4F2AE /* ApodController.swift */,
 				C7690C9129E17366009B50EC /* Apod */,
@@ -165,6 +178,18 @@
 				C71B9E8629DECB6900B4F2AE /* ApodTableViewController.swift */,
 			);
 			path = Apod;
+			sourceTree = "<group>";
+		};
+		C77346522A2F7C2800223AE6 /* Sapce news */ = {
+			isa = PBXGroup;
+			children = (
+				C773465D2A2F902300223AE6 /* NewsAPI.swift */,
+				C77346532A2F7C5200223AE6 /* NewsModel.swift */,
+				C773465B2A2F8F9E00223AE6 /* SpaceNewsController.swift */,
+				C77346572A2F8A8700223AE6 /* SpaceNewsTableViewController.swift */,
+				C77346592A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift */,
+			);
+			path = "Sapce news";
 			sourceTree = "<group>";
 		};
 		C791B5382A14BBB600A5A1E6 /* Planets & Moons */ = {
@@ -220,6 +245,7 @@
 				C7CB22C22A095DCB00E5B046 /* Space Def */,
 				C791B5382A14BBB600A5A1E6 /* Planets & Moons */,
 				C7AAC6BA2A288A8A00FB00B6 /* Space Pic */,
+				C77346522A2F7C2800223AE6 /* Sapce news */,
 				C7A0844129D4BC01002DB362 /* Main.storyboard */,
 				C7A0844429D4BC02002DB362 /* Assets.xcassets */,
 				C7A0844629D4BC02002DB362 /* LaunchScreen.storyboard */,
@@ -384,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77346562A2F84DE00223AE6 /* ApodAPI.swift in Sources */,
 				C73C31192A0C006500CD9CA1 /* DefinitionController.swift in Sources */,
 				C793A4CA29D54C500071B566 /* Modules.swift in Sources */,
 				C738F0DB2A29176E00D75A13 /* SpacePicLookUpTableViewCell.swift in Sources */,
@@ -400,23 +427,28 @@
 				C7CB22E62A0A962500E5B046 /* SourceToImageView.swift in Sources */,
 				C738F0DE2A291A5200D75A13 /* ImagesTableViewCell.swift in Sources */,
 				C7A0843C29D4BC01002DB362 /* AppDelegate.swift in Sources */,
+				C773465A2A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift in Sources */,
 				C7AAC6BE2A2891CD00FB00B6 /* PicsController.swift in Sources */,
 				C7C8783829D58B22009495F5 /* ModuleTableViewCell.swift in Sources */,
 				C7AAC6C22A28FF6C00FB00B6 /* SpacePicTableViewController.swift in Sources */,
 				C73C311B2A0C0A9F00CD9CA1 /* DiscloseButton.swift in Sources */,
+				C77346582A2F8A8700223AE6 /* SpaceNewsTableViewController.swift in Sources */,
 				C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */,
 				C7D3BCF22A18AA340031AC87 /* PlanetMoonAPI.swift in Sources */,
 				C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */,
 				C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */,
 				C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */,
 				C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */,
+				C773465C2A2F8F9E00223AE6 /* SpaceNewsController.swift in Sources */,
 				C7AAC6BC2A288ADB00FB00B6 /* Pics.swift in Sources */,
 				C7EE846F2A0805D6005E2818 /* ImageViewController.swift in Sources */,
 				C73C31172A0BFFA100CD9CA1 /* Definition.swift in Sources */,
 				C791B5402A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift in Sources */,
+				C77346542A2F7C5200223AE6 /* NewsModel.swift in Sources */,
 				C7690C9529E173D4009B50EC /* LikedTableViewController.swift in Sources */,
 				C793A4CC29D551D40071B566 /* ModulesTableViewController.swift in Sources */,
 				C7A0843E29D4BC01002DB362 /* SceneDelegate.swift in Sources */,
+				C773465E2A2F902300223AE6 /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,7 +45,7 @@ class ApodTableViewController: UITableViewController, YTPlayerViewDelegate {
         Task {
             do {
                 let date = datePicker.date.description.prefix(10)
-                let query = ["api_key":"DEMO_KEY", "date":"\(date)"]
+                let query = ["api_key":ApodAPI.getApiKey(), "date":"\(date)"]
                 apod = try await ApodController.fetchApodInfo(query: query)
                 updateUI(apod: apod!)
             } catch {

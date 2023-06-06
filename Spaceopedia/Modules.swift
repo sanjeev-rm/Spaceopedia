@@ -11,8 +11,8 @@ enum Modules: CaseIterable, Identifiable
 {
     case apod
     case spaceDef
-    case spacePic
-    case spaceFacts
+//    case spacePic
+//    case spaceFacts
     case planetsAndMoons
     case spaceNews
     
@@ -24,8 +24,8 @@ enum Modules: CaseIterable, Identifiable
         switch self {
         case .apod: return "APOD"
         case .spaceDef: return "SPACE DEF"
-        case .spacePic: return "SPACE PIC"
-        case .spaceFacts: return "SPACE FACTS"
+//        case .spacePic: return "SPACE PIC"
+//        case .spaceFacts: return "SPACE FACTS"
         case .planetsAndMoons: return "Planets & Moons"
         case .spaceNews: return "SPACE NEWS"
         }
@@ -35,8 +35,8 @@ enum Modules: CaseIterable, Identifiable
         switch self {
         case .apod: return "Astronomical picture of the day"
         case .spaceDef: return "Definitions of astronomical terms"
-        case .spacePic: return "Pictures of astronomical terms"
-        case .spaceFacts: return "Random facts about astronomy"
+//        case .spacePic: return "Pictures of astronomical terms"
+//        case .spaceFacts: return "Random facts about astronomy"
         case .planetsAndMoons: return "Planets and Moons"
         case .spaceNews: return "Top 10 space news"
         }
@@ -46,8 +46,8 @@ enum Modules: CaseIterable, Identifiable
         switch self {
         case .apod: return "apodSegue"
         case .spaceDef: return "spaceDefSegue"
-        case .spacePic: return "spacePicSegue"
-        case .spaceFacts: return "spaceFactsSegue"
+//        case .spacePic: return "spacePicSegue"
+//        case .spaceFacts: return "spaceFactsSegue"
         case .planetsAndMoons: return "planetsAndMoonsSegue"
         case .spaceNews: return "spaceNewsSegue"
         }
