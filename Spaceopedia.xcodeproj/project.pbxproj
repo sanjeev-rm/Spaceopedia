@@ -28,7 +28,7 @@
 		C77346582A2F8A8700223AE6 /* SpaceNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346572A2F8A8700223AE6 /* SpaceNewsTableViewController.swift */; };
 		C773465A2A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77346592A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift */; };
 		C773465C2A2F8F9E00223AE6 /* SpaceNewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773465B2A2F8F9E00223AE6 /* SpaceNewsController.swift */; };
-		C773465E2A2F902300223AE6 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773465D2A2F902300223AE6 /* NewsAPI.swift */; };
+		C773465E2A2F902300223AE6 /* SapceFlightNewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773465D2A2F902300223AE6 /* SapceFlightNewsAPI.swift */; };
 		C791B53A2A14BBF200A5A1E6 /* PlanetMoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B5392A14BBF200A5A1E6 /* PlanetMoon.swift */; };
 		C791B53E2A15519A00A5A1E6 /* PlanetMoonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B53D2A15519A00A5A1E6 /* PlanetMoonController.swift */; };
 		C791B5402A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791B53F2A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift */; };
@@ -74,7 +74,7 @@
 		C77346572A2F8A8700223AE6 /* SpaceNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceNewsTableViewController.swift; sourceTree = "<group>"; };
 		C77346592A2F8E0500223AE6 /* SpaceNewsArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceNewsArticleTableViewCell.swift; sourceTree = "<group>"; };
 		C773465B2A2F8F9E00223AE6 /* SpaceNewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceNewsController.swift; sourceTree = "<group>"; };
-		C773465D2A2F902300223AE6 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		C773465D2A2F902300223AE6 /* SapceFlightNewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SapceFlightNewsAPI.swift; sourceTree = "<group>"; };
 		C791B5392A14BBF200A5A1E6 /* PlanetMoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMoon.swift; sourceTree = "<group>"; };
 		C791B53D2A15519A00A5A1E6 /* PlanetMoonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetMoonController.swift; sourceTree = "<group>"; };
 		C791B53F2A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsAndMoonsTableViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		C77346522A2F7C2800223AE6 /* Sapce news */ = {
 			isa = PBXGroup;
 			children = (
-				C773465D2A2F902300223AE6 /* NewsAPI.swift */,
+				C773465D2A2F902300223AE6 /* SapceFlightNewsAPI.swift */,
 				C77346532A2F7C5200223AE6 /* NewsModel.swift */,
 				C773465B2A2F8F9E00223AE6 /* SpaceNewsController.swift */,
 				C77346572A2F8A8700223AE6 /* SpaceNewsTableViewController.swift */,
@@ -448,7 +448,7 @@
 				C7690C9529E173D4009B50EC /* LikedTableViewController.swift in Sources */,
 				C793A4CC29D551D40071B566 /* ModulesTableViewController.swift in Sources */,
 				C7A0843E29D4BC01002DB362 /* SceneDelegate.swift in Sources */,
-				C773465E2A2F902300223AE6 /* NewsAPI.swift in Sources */,
+				C773465E2A2F902300223AE6 /* SapceFlightNewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

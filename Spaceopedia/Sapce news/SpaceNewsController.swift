@@ -12,15 +12,16 @@ class SpaceNewsController
 {
     /// An Error type to represents erros that occur during fetching Space News.
     enum SpaceNewsError: Error {
+        case invalidUrl
         case invalidArticleUrl
         case invalidImageUrl
         case articleNotFound
         case imageNotFound
     }
     
-    /// Fetches Articles in a given sortBy order.
-    static func fetchArticles(sortBy: NewsAPI.ArticlesSortBy) async throws -> NewsResponse {
-        guard let url = NewsAPI.getRequestUrlWith(sortBy: .publishedAt) else {
+    /// Fetches Articles.
+    static func fetchArticles() async throws -> SpaceFlightNewsAPIResponse {
+        guard let url = SpaceFlightNewsAPI.getRequestUrl() else {
             throw SpaceNewsError.articleNotFound
         }
         
@@ -32,7 +33,7 @@ class SpaceNewsController
         }
         
         let jsonDecoder = JSONDecoder()
-        let jsonDecodedNewsResponse = try jsonDecoder.decode(NewsResponse.self, from: data)
+        let jsonDecodedNewsResponse = try jsonDecoder.decode(SpaceFlightNewsAPIResponse.self, from: data)
         
         return jsonDecodedNewsResponse
     }

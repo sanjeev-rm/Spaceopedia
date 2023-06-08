@@ -10,16 +10,8 @@ import SafariServices
 
 class SpaceNewsTableViewController: UITableViewController {
     
-    @IBOutlet weak var sortByPopUpMenuButton: UIBarButtonItem!
-    
     /// The articles to present.
     var articles: [Article]?
-    
-    private var sortArticlesBy = NewsAPI.ArticlesSortBy.publishedAt {
-        didSet {
-            tableView.reloadData()
-        }
-    }
     
     /// The enum that represents SpaceNewsVC states.
     private enum SpaceNewsVCState {
@@ -40,8 +32,7 @@ class SpaceNewsTableViewController: UITableViewController {
         Task {
             updateUIForFetchingState()
             do {
-                articles = try await SpaceNewsController.fetchArticles(sortBy: sortArticlesBy).articles
-                articles = articles?.shuffled() // Shuffles the articles to give new srticles everytime it loads.
+                articles = try await SpaceNewsController.fetchArticles().results
                 updateUIForFetchedState()
             } catch {
                 updateUIForErrorState()
@@ -65,34 +56,11 @@ class SpaceNewsTableViewController: UITableViewController {
     /// Updates the UI for when the VC has fetched the articles.
     func updateUIForFetchedState() {
         vcState = .fetched
-        setSortByPopUpButton()
     }
     
     /// Updates the UI for when the VC is in error state.
     func updateUIForErrorState() {
         vcState = .error
-    }
-    
-    /// Sets the sortByPopUpButton.
-    func setSortByPopUpButton() {
-        let sortByRelevance = UIAction(title: "Relevance") { _ in
-            print("Sort by Relevance")
-            self.sortArticlesBy = .relevancy
-        }
-        
-        let sortByPopularity = UIAction(title: "Popularity") { _ in
-            print("Sort by Popularity")
-            self.sortArticlesBy = .popularity
-        }
-        
-        let sortByLatest = UIAction(title: "Latest") { _ in
-            print("Sort by Latest")
-            self.sortArticlesBy = .publishedAt
-        }
-        
-        let sortByMenu = UIMenu(title: "Sort By", options: .displayInline, children: [sortByRelevance, sortByPopularity, sortByLatest])
-        
-        sortByPopUpMenuButton.menu = sortByMenu
     }
 
     // MARK: - Table view data source
@@ -132,12 +100,12 @@ class SpaceNewsTableViewController: UITableViewController {
             }
             
             // Updating cell with the basic info tht we already have.
-            cell.update(title: article.title, copyright: article.author)
+            cell.update(title: article.title, copyright: article.newsSite)
             
             // Unwrapping url of the image that is string format.
             // Cheking whether the article contains an image url.
             //If not just returns the cell without an image.
-            guard let imageUrlString = article.urlToImage else { return cell }
+            guard let imageUrlString = article.imageUrl else { return cell }
             
             Task {
                 do {
