@@ -13,7 +13,7 @@ class ImagesTableViewController: UITableViewController {
     var picsAPIResponse: PicsAPIResponse?
     
     /// The dictionary of Pics of the API response.
-    /// The key is the id of type String which is unique for each pic.
+    /// The key is the url of type String which is unique for each pic.
     /// The value is the pic(image) itself of type UIImage.
     var picsImages: [String : UIImage] = [:]
     
@@ -37,9 +37,10 @@ class ImagesTableViewController: UITableViewController {
         Task {
             do {
                 updateUIForFetchingState()
-                picsAPIResponse = try await PicsController.fetchPicsOf(word: planetMoon.bodyType + " " + planetMoon.englishName)
+                picsAPIResponse = try await PicsController.fetchPicsOf(word: planetMoon.englishName)
                 updateUIForImagesState()
             } catch {
+                print("\n\n\nERROR : \(error)\n\n\n")
                 updateUIForErrorState()
             }
         }
@@ -64,7 +65,7 @@ class ImagesTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         switch vcState {
         case .fetched:
-            guard let pics = picsAPIResponse?.pics else { return 0 }
+            guard let pics = picsAPIResponse?.collection.pics else { return 0 }
             return pics.count
         default:
             return 1
@@ -87,19 +88,20 @@ class ImagesTableViewController: UITableViewController {
         case .fetched:
             let cell = tableView.dequeueReusableCell(withIdentifier: "planetMoonImageCell", for: indexPath) as! ImagesTableViewCell
             
-            let pic = picsAPIResponse?.pics[indexPath.section]
+            let pic = picsAPIResponse?.collection.pics[indexPath.section]
             
-            cell.descriptionLabel.text = pic?.alternateDescription
-            cell.copyrightLabel.text = "© \(pic?.photographer.firstName ?? "") \(pic?.photographer.lastName ?? "")"
+            cell.descriptionLabel.text = pic?.data[0].title
+            cell.copyrightLabel.text = pic?.data[0].dateCreated
+//            cell.copyrightLabel.text = "© \(pic?.photographer.firstName ?? "") \(pic?.photographer.lastName ?? "")"
             
-            if let imageUrlString = pic?.imageUrls.regular,
+            if let imageUrlString = pic?.links[0].url,
                let imageUrl = URL(string: imageUrlString) {
                 Task {
                     do {
                         let image = try await PicsController.fetchImageWithUrl(url: imageUrl)
                         cell.cellImageView.image = image
-                        // Adding the image to picsImage Dictionary.
-                        picsImages[pic!.id] = image
+                        // Adding the image to picsImage Dictionary with it's url.
+                        picsImages[pic!.url] = image
                     } catch {
                         print("Unable to fetch the image. Therefore the default image will be shown. That was set in storyboard.")
                     }
@@ -122,9 +124,9 @@ class ImagesTableViewController: UITableViewController {
         
         if !picsImages.isEmpty,
            let picsAPIResponse = picsAPIResponse {
-            let picId = picsAPIResponse.pics[selectedIndex].id
-            // Setting the VC's image to pic respective to the pic id.
-            imageVC?.image = picsImages[picId]
+            let picUrl = picsAPIResponse.collection.pics[selectedIndex].url
+            // Setting the VC's image to pic respective to the pic url.
+            imageVC?.image = picsImages[picUrl]
         }
         
         imageVC?.sourceView = .planetsAndMoonsImagesView

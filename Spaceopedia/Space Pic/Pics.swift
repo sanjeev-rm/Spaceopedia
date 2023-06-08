@@ -7,57 +7,62 @@
 
 import Foundation
 
+/// Model to represent the response from the Nasa Images API.
 struct PicsAPIResponse: Codable {
-    var total: Int
-    var totalPages: Int
-    var pics: [Pic]
+    var collection: Collection
+}
+
+/// Model to represent a collection.
+struct Collection: Codable {
+    var version: String
+    var url: String
+    var pics: [PicItem]
     
     enum CodingKeys: String, CodingKey {
-        case total
-        case totalPages = "total_pages"
-        case pics = "results"
+        case version
+        case url = "href"
+        case pics = "items"
     }
 }
 
-struct Pic: Codable {
-    var id: String
-    var description: String?
-    var alternateDescription: String
-    var imageUrls: ImageUrls
-    var photographer: Photographer
+/// Model to represent PicItem.
+/// properties data & links will contain only 1 element. So call it like data[0] & links[0].
+struct PicItem: Codable {
+    var url: String
+    var data: [PicData]
+    var links: [PicLink]
     
     enum CodingKeys: String, CodingKey {
-        case id
-        case description
-        case alternateDescription = "alt_description"
-        case imageUrls = "urls"
-        case photographer = "user"
-    }
-}
-
-struct ImageUrls: Codable {
-    var raw: String
-    var full: String
-    var regular: String
-    var small: String
-}
-
-struct Photographer: Codable {
-    var firstName: String
-    var lastName: String?
-    var links: UserLinks
-    
-    enum CodingKeys: String, CodingKey {
-        case firstName = "first_name"
-        case lastName = "last_name"
+        case url = "href"
+        case data
         case links
     }
 }
 
-struct UserLinks: Codable {
-    var profileLink: String
+/// Model to represent PicData.
+struct PicData: Codable {
+    var title: String
+    var dateCreated: String
+    var mediaType: String
+    var smallDescription: String?
+    var description: String
     
     enum CodingKeys: String, CodingKey {
-        case profileLink = "html"
+        case title
+        case dateCreated = "date_created"
+        case mediaType = "media_type"
+        case smallDescription = "description_508"
+        case description
+    }
+}
+
+/// Model to represent PicLink.
+struct PicLink: Codable {
+    var url: String
+    var render: String
+    
+    enum CodingKeys: String, CodingKey {
+        case url = "href"
+        case render
     }
 }

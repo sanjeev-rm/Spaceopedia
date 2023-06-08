@@ -21,13 +21,13 @@ class PicsController
     
     /// Fetches PicsAPIResponse from the API.
     /// Fetches the URLS of the images.
-    static func fetchPicsOf(word searchQuery : String) async throws -> PicsAPIResponse {
+    static func fetchPicsOf(word searchQuery : String, sinceYear: Int = 2015) async throws -> PicsAPIResponse {
         
-        let query: [String : String] = ["page":"1",
-                                        "query":searchQuery,
-                                        "client_id":SpacePicAPI.getApiKey()]
+        let query: [String : String] = ["q":searchQuery,
+                                        "media_type":"image",
+                                        "year_start":String(sinceYear)]
         
-        var urlComponents = URLComponents(string: SpacePicAPI.getRequestUrl())!
+        var urlComponents = URLComponents(string: SpacePicAPI.getRequestUrlString())!
         urlComponents.queryItems = query.map { key, value in
             URLQueryItem(name: key, value: value)
         }

@@ -44,7 +44,7 @@ class SpacePicTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        guard let pics = picsAPIResponse?.pics else { return 2 }
+        guard let pics = picsAPIResponse?.collection.pics else { return 2 }
         return 2 + pics.count
     }
 
@@ -64,21 +64,21 @@ class SpacePicTableViewController: UITableViewController {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "spacePicCell", for: indexPath) as! SpacePicTableViewCell
-            Task {
-                do {
-                    let spacePic = picsAPIResponse?.pics[indexPath.section - 2]
-                    cell.spacePicDescriptionLabel.text = spacePic?.alternateDescription
-                    cell.spacePicCopyrightLabel.text = (spacePic?.photographer.firstName ?? "") + " " + (spacePic?.photographer.lastName ?? "")
-                    if let imageUrlString = spacePic?.imageUrls.regular,
-                       let imageUrl = URL(string: imageUrlString) {
-                        cell.spacePicImageView.image = try await PicsController.fetchImageWithUrl(url: imageUrl)
-                    } else {
-                        cell.spacePicImageView.image = UIImage(systemName: "sparkles.square.filled.on.square")
-                    }
-                } catch {
-                    print(error)
-                }
-            }
+//            Task {
+//                do {
+//                    let spacePic = picsAPIResponse?.pics[indexPath.section - 2]
+//                    cell.spacePicDescriptionLabel.text = spacePic?.alternateDescription
+//                    cell.spacePicCopyrightLabel.text = (spacePic?.photographer.firstName ?? "") + " " + (spacePic?.photographer.lastName ?? "")
+//                    if let imageUrlString = spacePic?.imageUrls.regular,
+//                       let imageUrl = URL(string: imageUrlString) {
+//                        cell.spacePicImageView.image = try await PicsController.fetchImageWithUrl(url: imageUrl)
+//                    } else {
+//                        cell.spacePicImageView.image = UIImage(systemName: "sparkles.square.filled.on.square")
+//                    }
+//                } catch {
+//                    print(error)
+//                }
+//            }
             return cell
         }
     }
