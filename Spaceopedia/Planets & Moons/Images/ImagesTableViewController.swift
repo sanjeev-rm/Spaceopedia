@@ -124,9 +124,18 @@ class ImagesTableViewController: UITableViewController {
         
         if !picsImages.isEmpty,
            let picsAPIResponse = picsAPIResponse {
-            let picUrl = picsAPIResponse.collection.pics[selectedIndex].url
+            let pics = picsAPIResponse.collection.pics
             // Setting the VC's image to pic respective to the pic url.
-            imageVC?.image = picsImages[picUrl]
+            imageVC?.image = picsImages[pics[selectedIndex].url]
+            
+            // MARK: - for when you want to show the description along with the image too.
+            /* For version 2.0
+             * Uncomment this and create a description variable in ImageViewController.
+             * And present this.
+             */
+            //imageVC?.description = pics[selectedIndex].data.first!.description
+            
+            
         }
         
         imageVC?.sourceView = .planetsAndMoonsImagesView

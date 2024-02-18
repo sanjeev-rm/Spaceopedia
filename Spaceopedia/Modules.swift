@@ -10,11 +10,11 @@ import Foundation
 enum Modules: CaseIterable, Identifiable
 {
     case apod
+    case spaceNews
+    case planetsAndMoons
     case spaceDef
 //    case spacePic
 //    case spaceFacts
-    case planetsAndMoons
-    case spaceNews
     
     var id: String {
         return title

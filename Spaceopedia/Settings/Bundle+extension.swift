@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+extension Bundle {
+    /// The version number fo the application
+    var releaseVersionNumber: String? {
+        return infoDictionary?["CFBundleShortVersionString"] as? String
+    }
+    
+    /// The build version of the application
+    var buildVersionNumber: String? {
+        return infoDictionary?["CFBundleVersion"] as? String
+    }
+}

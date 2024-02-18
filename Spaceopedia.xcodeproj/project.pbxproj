@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5DB10F8F4AD7AAE348F56B14 /* Pods_Spaceopedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB10CFF81166B7DB13673373 /* Pods_Spaceopedia.framework */; };
+		C70A8B7E2B827592007C5DFC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A8B7D2B827592007C5DFC /* SettingsTableViewController.swift */; };
+		C70A8B802B82A532007C5DFC /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A8B7F2B82A532007C5DFC /* Bundle+extension.swift */; };
 		C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C719CE3329F15C7600BF7363 /* LikedApodModel.swift */; };
 		C71B9E8329DEC07800B4F2AE /* ApodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8229DEC07800B4F2AE /* ApodModel.swift */; };
 		C71B9E8529DEC29F00B4F2AE /* ApodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71B9E8429DEC29F00B4F2AE /* ApodController.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		16879BD2A17F629AB7A22D23 /* Pods-Spaceopedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaceopedia.release.xcconfig"; path = "Target Support Files/Pods-Spaceopedia/Pods-Spaceopedia.release.xcconfig"; sourceTree = "<group>"; };
+		C70A8B7D2B827592007C5DFC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		C70A8B7F2B82A532007C5DFC /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		C719CE3329F15C7600BF7363 /* LikedApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedApodModel.swift; sourceTree = "<group>"; };
 		C71B9E8229DEC07800B4F2AE /* ApodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodModel.swift; sourceTree = "<group>"; };
 		C71B9E8429DEC29F00B4F2AE /* ApodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,15 @@
 				16879BD2A17F629AB7A22D23 /* Pods-Spaceopedia.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C70A8B7C2B82754E007C5DFC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C70A8B7D2B827592007C5DFC /* SettingsTableViewController.swift */,
+				C70A8B7F2B82A532007C5DFC /* Bundle+extension.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		C71B9E8129DEC00C00B4F2AE /* APOD */ = {
@@ -239,6 +252,7 @@
 				C793A4C929D54C500071B566 /* Modules.swift */,
 				C7C8783729D58B22009495F5 /* ModuleTableViewCell.swift */,
 				C793A4CB29D551D40071B566 /* ModulesTableViewController.swift */,
+				C70A8B7C2B82754E007C5DFC /* Settings */,
 				C73C311E2A0C233000CD9CA1 /* Components */,
 				C7CB22E72A0A9B0F00E5B046 /* Image View Controller */,
 				C71B9E8129DEC00C00B4F2AE /* APOD */,
@@ -434,6 +448,7 @@
 				C73C311B2A0C0A9F00CD9CA1 /* DiscloseButton.swift in Sources */,
 				C77346582A2F8A8700223AE6 /* SpaceNewsTableViewController.swift in Sources */,
 				C72AFE6F29E9CDC70041A379 /* LikedApodTableViewController.swift in Sources */,
+				C70A8B802B82A532007C5DFC /* Bundle+extension.swift in Sources */,
 				C7D3BCF22A18AA340031AC87 /* PlanetMoonAPI.swift in Sources */,
 				C71B9E8729DECB6900B4F2AE /* ApodTableViewController.swift in Sources */,
 				C719CE3429F15C7600BF7363 /* LikedApodModel.swift in Sources */,
@@ -446,6 +461,7 @@
 				C791B5402A15530E00A5A1E6 /* PlanetsAndMoonsTableViewController.swift in Sources */,
 				C77346542A2F7C5200223AE6 /* NewsModel.swift in Sources */,
 				C7690C9529E173D4009B50EC /* LikedTableViewController.swift in Sources */,
+				C70A8B7E2B827592007C5DFC /* SettingsTableViewController.swift in Sources */,
 				C793A4CC29D551D40071B566 /* ModulesTableViewController.swift in Sources */,
 				C7A0843E29D4BC01002DB362 /* SceneDelegate.swift in Sources */,
 				C773465E2A2F902300223AE6 /* SapceFlightNewsAPI.swift in Sources */,
@@ -595,7 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 255PJ663UF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spaceopedia/Info.plist;
@@ -614,9 +630,12 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanjeevragunathan.Spaceopedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -627,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 255PJ663UF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spaceopedia/Info.plist;
@@ -646,9 +665,12 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanjeevragunathan.Spaceopedia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
