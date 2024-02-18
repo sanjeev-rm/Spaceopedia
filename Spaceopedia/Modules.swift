@@ -26,7 +26,7 @@ enum Modules: CaseIterable, Identifiable
         case .spaceDef: return "SPACE DEF"
 //        case .spacePic: return "SPACE PIC"
 //        case .spaceFacts: return "SPACE FACTS"
-        case .planetsAndMoons: return "Planets & Moons"
+        case .planetsAndMoons: return "PLANETS & MOONS"
         case .spaceNews: return "SPACE NEWS"
         }
     }
