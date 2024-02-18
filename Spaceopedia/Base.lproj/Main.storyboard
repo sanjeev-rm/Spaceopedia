@@ -1372,7 +1372,7 @@
                             <tableViewSection id="pwD-pa-vpj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="776" id="Bx7-uB-mwB">
-                                        <rect key="frame" x="20" y="131.5" width="374" height="776"/>
+                                        <rect key="frame" x="20" y="132" width="374" height="776"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bx7-uB-mwB" id="ECH-es-kRj">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="776"/>
@@ -1746,7 +1746,7 @@
                             <tableViewSection id="8UK-0L-RL9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="723" id="DAh-a7-yfM">
-                                        <rect key="frame" x="20" y="18" width="374" height="723"/>
+                                        <rect key="frame" x="20" y="8" width="374" height="723"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DAh-a7-yfM" id="PAV-A4-qeL">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="723"/>
