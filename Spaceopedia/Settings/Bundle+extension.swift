@@ -8,7 +8,7 @@
 import Foundation
 
 extension Bundle {
-    /// The version number fo the application
+    /// The version number of the application
     var releaseVersionNumber: String? {
         return infoDictionary?["CFBundleShortVersionString"] as? String
     }
