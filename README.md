@@ -4,7 +4,7 @@ A Space exploration App.
 ## [Design & Plan](https://drive.google.com/file/d/1REiUXYZGVUqOHrslr1DMJ9Jx5VJL9ZN_/view?usp=sharing)
 This contains the Research and the projects vision and ideas.
 
-## [Website](https://www.sanjeevragunathan.com)
+## [Website](https://www.sanjeevragunathan.com/spaceopedia)
 This website contains all the UI designs of the App.
 
 ## [TestFlight](https://testflight.apple.com/join/PlTx79tE)
